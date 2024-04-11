@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="landing-main">
+            <article class="logo-wrapper">
+                <img class="logo" src="co2B.png" alt="logo">
+            </article>
+            <section class="landing-wrapper" style="display:none;">
+                <h1>Bienvenu(e)</h1>
+                
+                <article class="landing-btns">
+                    <article class="login-article">
+                        <button type="button">Log In</button>
+                        <div></div>
+                    </article>
+
+                    <article class="signup-article">
+                        <button type="button">Sign Up</button> 
+                        <div></div>
+                    </article>
+                </article>
+            </section>
+
+
+            <section class="login-wrapper">
+                <h1>Log In</h1>
+                <article class="login-form-wrapper">
+                    <form action="login.php">
+                        <article class="label-wrapper username-label-wrapper">
+                            <label>Username:</label>
+                            <div></div>
+                        </article>
+                        <input type="text" name="username" placeholder="Enter your username">
+
+                        <article class="label-wrapper password-label-wrapper">
+                            <label>Password:</label>
+                            <div></div>
+                        </article>
+                        <input type="password" name="password" id="" placeholder="Enter your password">
+                    </form>
+                </article>
+
+                <article class="login-btn">
+                    <button type="submit">Log In</button>
+                    <div></div>
+                </article>
+                
+            </section>
+
+            <section class="signup-wrapper" style="display:none;">
+                <form action="signup.php">
+                    <label>Email:</label>
+                    <input type="email" name="newEmail" placeholder="Enter a valid email address">
+
+                    <article class="label-wrapper username-label-wrapper">
+                        <label>Username:</label>
+                        <div></div>
+                    </article>
+                    <input type="text" name="newUsername" placeholder="Enter your username">
+
+                    <article class="label-wrapper password-label-wrapper">
+                        <label>Password:</label>
+                        <div></div>
+                    </article>
+                    <input type="password" name="newPassword" placeholder="Enter your password">
+
+                    <input type="password" name="confPassword" placeholder="Enter your password again">
+
+                    <article class="signup-article">
+                        <button type="submit">Sing Up</button>
+                        <div></div>
+                    </article>
+                </form>
+            </section>
+        </main>
+    <body>
+</html>

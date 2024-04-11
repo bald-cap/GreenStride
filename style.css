@@ -1,0 +1,214 @@
+html, body, main{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    width: 100%;
+}
+
+body, .landing-btns, .landing-main /*, .login-wrapper, .login-form-wrapper form*/{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 60px;
+}
+
+body{
+    background-color: #0D3640;
+    color: #F0FCFA;
+    flex-direction: column;
+    font-family: monospace;
+}
+
+
+.logo-wrapper{
+    border: 2px solid #000A16;
+    border-radius: 150px;
+    padding: 8px;
+    background-color: #406570;
+    display: flex;
+    
+}
+
+.logo{
+    height: 50px;
+    width: auto;
+    clip-path: circle(25px);
+}
+
+
+/*-----------------------LANDING MAIN (LOGIN, SIGNUP)------------------ */
+.landing-main{
+    font-size: 50px;
+    flex-direction: column;
+}
+
+.landing-wrapper{
+    text-align: center;
+}
+
+.landing-btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.landing-btns .login-article, .landing-btns .signup-article{
+    display: flex;
+}
+
+/* shared */
+.landing-btns .login-article button, .landing-btns .signup-article button{
+    font-size: inherit;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    border: 4px solid #000A16;
+    padding: 3px 25px;
+    background-color: #F0FCFA;
+    width: auto;
+}
+
+.landing-btns .signup-article button, .landing-btns .login-article button{
+    transform: translate(-5.3%, -13%)
+}
+
+
+.landing-btns .login-article div, .landing-btns .signup-article div{
+    background-color: #334A51;
+    height: 71.33px;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.landing-btns .login-article div{
+    width: 197.02px;
+}
+
+.landing-btns .signup-article div{
+    width: 235.89px;
+}
+
+
+/* ---------------------LOGIN SCREEN------------------- */
+
+.login-wrapper{
+    height: 100%;
+}
+
+.login-wrapper, .login-form-wrapper form{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.login-wrapper, .login-form-wrapper form{
+    flex-direction: column;
+}
+
+.login-form-wrapper input{
+    height: 30px;
+    width: 300px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    background-color: #F0FCFA;
+}
+
+.login-form-wrapper input::placeholder{
+    color: #5E838E;
+    text-align: center;
+    font-size: 19px;
+    font-family: monospace;
+}
+
+.login-btn{
+    margin-top: 30px;
+}
+
+.login-form-wrapper form .label-wrapper{
+    margin-bottom: 10px;
+}
+
+.label-wrapper label{
+    background-color: #406570;
+    border: 3px solid #000A16;
+    border-radius: 10px;
+    padding: 0 40px;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-3%, -10%);
+    font-size: 40px;
+}
+
+.label-wrapper div{
+    height: 52px;
+    width: 283.27px;
+    position: relative;
+    z-index: 0;
+    background-color: #96AFB8;
+    border-radius: 10px;
+}
+
+.login-btn button{
+    font-size: 40px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    border: 4px solid #000A16;
+    padding: 0px 20px;
+    background-color: #F0FCFA;
+    width: auto;
+    transform: translate(-4%, -10%);
+    font-family: inherit;
+}
+
+.login-btn div{
+    background-color: #334A51;
+    height: 54.67px;
+    width: 179.96px;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+/* 
+tablette site
+.landing-main{
+    font-size: 40px;
+}
+
+.landing-btns .login-article button{
+    transform: translate(-10%, -15%)
+}
+
+.landing-btns .signup-article button{
+    transform: translate(-5.7%, -15%)
+}
+
+.landing-btns .login-article div{
+    width: 140px;
+}
+
+.landing-btns .signup-article div{
+    width: 175px;
+}
+
+mobile site
+.landing-btns{
+    flex-wrap: wrap;
+} 
+
+.landing-btns .login-article{
+    margin-bottom: 15px
+}
+*/
