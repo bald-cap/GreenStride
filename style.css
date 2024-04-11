@@ -176,6 +176,42 @@ body{
 }
 
 
+/* ------------------------SIGN UP SCREEN---------------------*/
+.signup-wrapper form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signup-wrapper form .label-wrapper{
+    margin-top: 50px;
+}
+
+.signup-wrapper form .email-label-wrapper div{
+    width: 217.29px ;
+}
+
+.signup-wrapper form input{
+    margin-top: 10px;
+    height: 30px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: #F0FCFA;
+}
+
+.signup-wrapper form input::placeholder{
+    color: #5E838E;
+    text-align: center;
+    font-size: 19px;
+    font-family: monospace;
+}
+
+.signup-article{
+    
+}
+
+
 
 
 

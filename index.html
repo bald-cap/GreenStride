@@ -11,6 +11,7 @@
             <article class="logo-wrapper">
                 <img class="logo" src="co2B.png" alt="logo">
             </article>
+
             <section class="landing-wrapper" style="display:none;">
                 <h1>Bienvenu(e)</h1>
                 
@@ -28,7 +29,7 @@
             </section>
 
 
-            <section class="login-wrapper">
+            <section class="login-wrapper" style="display:none;">
                 <h1>Log In</h1>
                 <article class="login-form-wrapper">
                     <form action="login.php">
@@ -53,9 +54,12 @@
                 
             </section>
 
-            <section class="signup-wrapper" style="display:none;">
+            <section class="signup-wrapper">
                 <form action="signup.php">
-                    <label>Email:</label>
+                    <article class="label-wrapper email-label-wrapper">
+                        <label>Email:</label>
+                        <div></div>
+                    </article>
                     <input type="email" name="newEmail" placeholder="Enter a valid email address">
 
                     <article class="label-wrapper username-label-wrapper">
