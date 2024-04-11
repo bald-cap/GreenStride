@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,48 +8,84 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="#"><img src="" alt="Home Page">Page D'accueil</a>
-    <a href="#"><img src="" alt="User Profile">Profile</a>
-    <a href="#"><img src="" alt="Leaderboard">Lists</a>
-    <a href="#"><img src="" alt="Test Page">Prints</a>
-  </nav>
+    <nav>
+        <article>
+            <a href="#"><img src="home.png" alt="Home Page">Page D'accueil</a>
+        </article>
 
-  <main>
-    <section>
-        <article class="food-cat-wrapper">
-            <article>
-                <h2>Category Name</h2>
-                <img src="" alt="Food Icon">
+        <article>
+            <a href="#"><img src="user.png" alt="User Profile">Profile</a>
+        </article>
+
+        <article>
+            <a href="#"><img src="check-list.png" alt="Leaderboard">Lists</a>
+        </article>
+
+        <article>
+            <a href="#"><img src="results.png" alt="Test Page">Tes Resultats</a>
+        </article>
+    </nav>
+
+    <main>
+        <section class="food-cat-wrapper">
+            <article class="food-cat-facecard">
+                <article class="facecard-container">
+                    <h2>Food Category</h2>
+                    <article class="food-img-wrapper">
+                        <img src="diet.png" alt="Food Icon">
+                    </article>
+                </article>
                 <div></div>
             </article> 
 
-            <form action="cats.php" style="display:none;">
-                <label>Meat Type:</label>
-                <article class="meat-type">
-                    <p >Beef</p>
-                    <p>Pork</p>
-                    <p>Fish</p>
-                </article>
+            <form action="cats.php">
+                <article class="form-sect left-sect">
+                    <article class="meat-label-wrapper">
+                        <label>Meat Type:</label>
+                        <div></div>
+                    </article>
     
-                <label>Quantity:</label>
-                <article>
-                    <input type="number" name="noOfMeats" placeholder="Quantity of meat">
-                    <p> Pieces of Meat </p>
-                </article>
-    
-                <label>Frequency:</label>
-                <input type="number" name="freq num">
+                    <article class="meat-type">
+                        <p>Beef</p>
+                        <p>Pork</p>
+                        <p>Fish</p>
+                    </article>
 
-                <article class="freq-opt">
-                    <p> Every day </p>
-                    <p> Every four days </p>
-                    <p> Every week </p>
-                    <p> Every month </p>                   
+                    <article class="qty-label-wrapper">
+                        <label>Quantity:</label>
+                        <div></div>
+                    </article>
+    
+                    <article class="noOfMeats">
+                        <input type="number" name="noOfMeats" placeholder="Quantity of meat">
+                        <p> Pieces of Meat </p>
+                    </article>
+                </article>
+                
+                
+                <article class="form-sect">
+                    <article class="freq-label-wrapper">
+                        <label>Frequency:</label>
+                        <div></div>
+                    </article>
+    
+                    <article class="freq-wrapper">
+                        <input type="number" name="freq num" placeholder="How often?">
+    
+                        <article class="freq-opt">
+                        <p> Every day </p>
+                        <p> Every four days </p>
+                        <p> Every week </p>
+                        <p> Every month </p>                   
+                        </article>
+                    </article>
                 </article>
             </form>
 
-            <img src="" alt="Next button">
+            <article class="carbs-next-wrapper">
+                <button class="carbs-next-btn" type="button">Carbs <img src="next.png" alt=""></button>
+                <div></div>
+            </article>
 
             <form action="cats.php" style="display:none;">
                 <label>Carbohydrates:</label>
@@ -76,11 +112,14 @@
                 </article>
             </form>
 
-            <img src="" alt="Next button">
-            
-        </article> 
+            <article class="ret-next-section" style="display: none;">
+                <button class="meat-prev-btn" type="button"><img src="prev.png" alt=""> Meat</button>
+                <button class="energy-next-btn" type="button">Energy Category<img src="next.png" alt=""></button>
+            </article>
 
-      <article class="energy-cat-wrapper">
+        </section> 
+
+        <section class="energy-cat-wrapper" style="display: none;">
             <article>
                 <h2>Energy</h2>
                 <img src="" alt="Energy Icon">
@@ -110,9 +149,9 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </article> 
+        </section> 
 
-        <article class="transport-cat-wrapper">
+        <section class="transport-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Transport Icon">
@@ -153,9 +192,9 @@
                 <option value="week">Every week</option>
                 <option value="month">Every month</option>
             </select>
-        </article> 
+        </section> 
 
-        <article class="outfit-cat-wrapper">
+        <section class="outfit-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Outfit Icon">
@@ -183,9 +222,9 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </article> 
+        </section> 
 
-        <article class="stationery-cat-wrapper">
+        <section class="stationery-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Food Icon">
@@ -213,9 +252,9 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </article> 
+        </section> 
 
-        <article class="gagdet-cat-wrapper">
+        <section class="gagdet-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Food Icon">
@@ -243,9 +282,9 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </article> 
+        </section> 
 
-        <article class="recycling-cat-wrapper">
+        <section class="recycling-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Recycling Icon">
@@ -273,7 +312,7 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </article> 
+        </section> 
   </main>
 </body>
 </html>
