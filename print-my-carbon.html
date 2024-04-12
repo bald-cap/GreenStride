@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Homepage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
     </nav>
 
     <main>
-        <section class="food-cat-wrapper">
+        <section class="food-cat-wrapper" style="display: none;">
             <article class="food-cat-facecard">
                 <article class="facecard-container">
                     <h2>Food Category</h2>
@@ -38,7 +38,7 @@
                 <div></div>
             </article> 
 
-            <form action="cats.php">
+            <form action="cats.php" style="display: none;">
                 <article class="form-sect left-sect">
                     <article class="meat-label-wrapper">
                         <label>Meat Type:</label>
@@ -82,102 +82,159 @@
                 </article>
             </form>
 
-            <article class="carbs-next-wrapper">
+            <article class="carbs-next-wrapper" style="display: none;">
                 <button class="carbs-next-btn" type="button">Carbs <img src="next.png" alt=""></button>
                 <div></div>
             </article>
 
-            <form action="cats.php" style="display:none;">
-                <label>Carbohydrates:</label>
-                <article class="carb-article"> 
-                    <p>Rice</p>
-                    <p>Potato</p>
-                    <p>Fish</p>
-                </article>
-    
-                <label>Quantity:</label>
-                <article>
-                    <input type="number" name="qtyCarbs" placeholder="Quantity of carbs">
-                    <p> Bowls/ Pieces </p>
-                </article>
-    
-                <label>Frequency:</label>
-                <input type="number" name="freq num">
+            <form action="cats.php" class="carbs-wrapper" style="display: none;">
+                <article class="form-sect left-sect">
+                    <article class="carbs-label-wrapper">
+                        <label>Carbohydrates:</label>
+                        <div></div>
+                    </article>
 
-                <article class="freq-opt">
-                    <p> Every day </p>
-                    <p> Every four days </p>
-                    <p> Every week </p>
-                    <p> Every month </p>                   
+                    <article class="carb-article"> 
+                        <p>Rice</p>
+                        <p>Potato</p>
+                        <p>Fish</p>
+                    </article>
+        
+                    <article class="carbs-qty-label-wrapper">
+                        <label>Quantity:</label>
+                        <div></div>
+                    </article>
+
+                    <article>
+                        <input type="number" name="qtyCarbs" placeholder="Quantity of carbs">
+                        <p> Bowls/ Pieces </p>
+                    </article>
+                </article>
+    
+                <article class="form-sect">
+                    <article class="carbs-freq-label-wrapper">
+                        <label>Frequency:</label>
+                        <div></div>
+                    </article>
+
+                    <input type="number" name="freq num" placeholder="How often?">
+
+                    <article class="freq-opt">
+                        <p> Every day </p>
+                        <p> Every four days </p>
+                        <p> Every week </p>
+                        <p> Every month </p>                   
+                    </article>
                 </article>
             </form>
 
             <article class="ret-next-section" style="display: none;">
-                <button class="meat-prev-btn" type="button"><img src="prev.png" alt=""> Meat</button>
-                <button class="energy-next-btn" type="button">Energy Category<img src="next.png" alt=""></button>
+
+                <article class="meat-prev-wrapper">
+                    <button class="meat-prev-btn" type="button"><img src="prev.png" alt=""> Meat</button>
+                    <div></div>
+                </article>
+
+                <article class="energy-next-wrapper">
+                    <button class="energy-next-btn" type="button">Energy Category<img src="next.png" alt=""></button>
+                    <div></div>
+                </article>
             </article>
 
         </section> 
 
-        <section class="energy-cat-wrapper" style="display: none;">
-            <article>
-                <h2>Energy</h2>
-                <img src="" alt="Energy Icon">
+        <section class="energy-cat-wrapper" style="display: none;" >
+            <article class="energy-cat-facecard">
+                <article class="energy-facecard-container">
+                    <h2>Energy Category</h2>
+                    <article class="energy-img-wrapper">
+                        <img src="renewable-energy.png" alt="Food Icon">
+                    </article>
+                </article>
                 <div></div>
-            </article> 
+            </article>  
 
-            <form action="cats.php" style="display:none;">
+            <form action="cats.php" class="energy-form-wrapper">
+                <article class="energy-form-sect left-sect">
+                    <article class="energy-src-wrapper">
+                        <article class="energy-src-label-wrapper">
+                            <label>Energy Sources: </label>
+                            <div></div>
+                        </article>
 
-            <article name="energy_src">
-                <h3>Energy Sources </h3>
-                <p>Grid</p>
-                <p>Solar</p>
-                <p>Gas <span>(for heating)</span></p>
-                <p> LPG Gas <span>(for Cooking)</span></p>                
-            </select>
+                        <p>Grid</p>
+                        <p>Solar</p>
+                        <p>Gas <span>(for heating)</span></p>
+                        <p> LPG Gas <span>(for Cooking)</span></p>                
+                    </article>
+        
+                    <article class="energy-qty-wrapper">
+                        <label>Energy Consumption:</label>
+                        <div></div>
+                    </article>
+                    <input type="number" name="" placeholder="In Watts">
+                </article>
 
-            <label>Energy Consumption:</label>
-            <input type="number" name="" placeholder="How much energy do you use?">
+                <article class="energy-form-sect right-sect">
 
-            <label>Frequency:</label>
-            <input type="number" name="freq_num">
+                    <article class="energy-freq-wrapper">
+                        <label>Frequency:</label>
+                        <div></div>
+                    </article>
+                    <input type="number" name="freq_num" placeholder="How often?">
 
-            <select name="frequency">
-                <option value="day">Every day</option>
-                <option value="fortnight">Every four days</option>
-                <option value="week">Every week</option>
-                <option value="month">Every month</option>
-            </select>
+                    <article class="energy-cat-freq">
+                        <p>Every day</p>
+                        <p>Every four days</p>
+                        <p>Every week</p>
+                        <p>Every month</p>
+                    </article>
+                </article>
             </form>
+
+            <article class="energy-ret-next-section">
+
+                <article class="food-cat-prev-wrapper">
+                    <button class="food-cat-prev-btn" type="button"><img src="prev.png" alt="">Food Category</button>
+                    <div></div>
+                </article>
+
+                <article class="transport-cat-next-wrapper">
+                    <button class="transport-cat-next-btn" type="button">Transportation Category<img src="next.png" alt=""></button>
+                    <div></div>
+                </article>
+            </article>
         </section> 
 
-        <section class="transport-cat-wrapper" style="display:none;">
-            <article>
-                <h2>Category Name</h2>
-                <img src="" alt="Transport Icon">
+        <section class="transport-cat-wrapper">
+            <article class="transport-cat-facecard">
+                <article class="transport-facecard-container">
+                    <h2>Transportation Category</h2>
+                    <article class="transport-img-wrapper">
+                        <img src="transportation.png" alt="Food Icon">
+                    </article>
+                </article>
                 <div></div>
-            </article> 
+            </article>  
 
-            <article name="mode_trans">
-                <label>Mode of Transportaion:</label>
+            <article name="mode_trans" style="display:none;">
+                <label>Mode of Transportation:</label>
                 <h3>Electric Options </h3>
                 <p>Electic Cars</p>
                 <p>Electic Scooter</p>
                 <p>Electric Bikes</p>
-                <p> Train </p>
+                <p>Train</p>
 
-                <h3> Diesel Options </h3>
+                <h3>Diesel Options</h3>
                 <p>Diesel Cars</p>
                 <p>Scooter</p>
-                <p> Motocycle </p>
+                <p>Motocycle</p>
 
                 <h3>Public Transport</h3>
 
-                <h3> Man Powered </h3>
+                <h3>Man Powered</h3>
                 <p>Bicycles</p>
-                <p> Walking </p>
-                
-                
+                <p>Walking</p>
             </article>
 
             <label>Distance:</label>
