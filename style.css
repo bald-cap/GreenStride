@@ -328,7 +328,7 @@ nav article a img{
     margin-top: 30px;
 }
 
-.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label{
+.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label, .mode-label-wrapper label, .distance-label-wrapper label, .transport-freq-label-wrapper label, .transport-ret-next-section button{
     background-color: #334A51;
     font-size: 20px;
     border: 2px solid #000A16;
@@ -341,14 +341,14 @@ nav article a img{
     transform: translate(-2%, -11%);
 }
 
-.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div{
+.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div{
     background-color: #000A16;
     position: relative;
     z-index: 0;
     border-radius: 7px;
 }
 
-.meat-label-wrapper div, .freq-label-wrapper div, .carbs-freq-label-wrapper div, .energy-freq-wrapper div{
+.meat-label-wrapper div, .freq-label-wrapper div, .carbs-freq-label-wrapper div, .energy-freq-wrapper div, .transport-freq-label-wrapper div{
     height:28px;
     width: 133.97px;
 }
@@ -359,7 +359,7 @@ nav article a img{
     width: 122.97px;
 }
 
-.qty-label-wrapper, .freq-label-wrapper, .carbs-qty-label-wrapper, .carbs-freq-label-wrapper, .energy-src-label-wrapper, .energy-qty-wrapper, .energy-freq-wrapper{
+.qty-label-wrapper, .freq-label-wrapper, .carbs-qty-label-wrapper, .carbs-freq-label-wrapper, .energy-src-label-wrapper, .energy-qty-wrapper, .energy-freq-wrapper, .mode-label-wrapper, .transport-freq-label-wrapper, .distance-label-wrapper{
     margin-bottom: 10px;
 }
 
@@ -370,20 +370,20 @@ nav article a img{
     flex-direction: column;
 }
 
-.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input{
+.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input, .transport-cat-wrapper form input{
     margin-right: 10px;
     border-radius: 7px;
     background-color: #F0FCFA;
 }
 
-.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder{
+.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder, .transport-cat-wrapper form input::placeholder{
     color: #5E838E;
     text-align: center;
     /* font-size: 19px; */
     font-family: monospace;
 }
 
-.carbs-next-btn, .ret-next-section button, .energy-ret-next-section button{
+.carbs-next-btn, .ret-next-section button, .energy-ret-next-section button, .transport-ret-next-section button{
     display: flex;
     font-size: 15px;
     font-family: inherit;
@@ -448,20 +448,20 @@ nav article a img{
 }
 
 
-.energy-next-btn, .energy-ret-next-section button{
+.energy-next-btn, .energy-ret-next-section button, .transport-ret-next-section button{
     font-weight: 600;
 }
 
-.ret-next-section img, .energy-ret-next-section img{
+.ret-next-section img, .energy-ret-next-section img, .transport-ret-next-section img{
     height: 17px;
     width: auto;
 }
 
-.meat-prev-btn img, .food-cat-prev-btn img{
+.meat-prev-btn img, .food-cat-prev-btn img, .energy-cat-prev-btn img{
     margin-right: 3px;
 }
 
-.energy-next-btn img, .transport-cat-next-btn img{
+.energy-next-btn img, .transport-cat-next-btn img, .cloth-cat-next-btn img{
     margin-left: 3px;
 }
 
@@ -541,7 +541,7 @@ nav article a img{
     width: 120px;
 }
 
-.energy-ret-next-section{
+.energy-ret-next-section, .transport-ret-next-section{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -583,7 +583,7 @@ nav article a img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
 }
 
 .transport-cat-facecard{
@@ -620,14 +620,87 @@ nav article a img{
     /* border-radius: 150px; */
     /* height: 200px; */
     background-color: #E7FFEF;
-    clip-path: circle(83px);
+    clip-path: circle(84px);
 }
 
 .transport-cat-facecard .transport-img-wrapper img{
     height: 170px;
     width: auto;
-    clip-path: circle(85px);
+    clip-path: circle(80px);
+    transform: translate(-0.2%, 1%);
 }
+
+.transport-cat-wrapper form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 55%;
+}
+
+.transport-cat-wrapper form .right-sect{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: space-around;
+    height: 320px;
+}
+
+.mode-label-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+.mode-label-wrapper div{
+    height: 28px;
+    width: 276.92px;
+}
+
+.distance-label-wrapper div{
+    height: 28px ;
+    width: 122.97px;
+}
+
+.modes-opt-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex: 1 1 25%; */
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modes-opt-wrapper h3, .public-trans-opt{
+    background-color: #43655A;
+    padding: 1px 15px;
+    border-radius: 5px;
+    border: 2px solid #000A16;
+}
+
+.diesel-mode-opt h3{
+    margin-top: 5px;
+}
+
+.electric-mode-opt h3{
+    margin-top: 0px;
+}
+
+.public-trans-opt{
+    font-size: 15.21px;
+    font-weight: bold;
+}
+
+.transport-ret-next-section .cloth-cat-next-wrapper div{
+    width: 178.21px;
+    height: 24px;
+    /* position: relative; */
+}
+
+.energy-cat-prev-wrapper div{
+    height: 24px;
+    width: 161.71px;
+}
+
 /* 
 tablette site
 .landing-main{

@@ -143,7 +143,7 @@
 
         </section> 
 
-        <section class="energy-cat-wrapper" style="display: none;" >
+        <section class="energy-cat-wrapper" style="display: none;">
             <article class="energy-cat-facecard">
                 <article class="energy-facecard-container">
                     <h2>Energy Category</h2>
@@ -217,38 +217,81 @@
                 <div></div>
             </article>  
 
-            <article name="mode_trans" style="display:none;">
-                <label>Mode of Transportation:</label>
-                <h3>Electric Options </h3>
-                <p>Electic Cars</p>
-                <p>Electic Scooter</p>
-                <p>Electric Bikes</p>
-                <p>Train</p>
+            <form action="cats.php">
+                <article class="transport-form-sect left-sect">
+                    <article class="transport-modes-wrapper">
 
-                <h3>Diesel Options</h3>
-                <p>Diesel Cars</p>
-                <p>Scooter</p>
-                <p>Motocycle</p>
+                        <article class="mode-label-wrapper">
+                            <label>Mode of Transportation:</label>
+                            <div></div>
+                        </article>
 
-                <h3>Public Transport</h3>
+                        <article class="modes-opt-wrapper">
+                            <article class="electric-mode-opt">
+                                <h3>Electric Options</h3>
+                                <p>Electic Cars</p>
+                                <p>Electic Scooter</p>
+                                <p>Electric Bikes</p>
+                                <p>Train</p>
+                            </article>
+                            
+                            <article class="diesel-mode-opt">
+                                <h3>Diesel Options</h3>
+                                <p>Diesel Cars</p>
+                                <p>Scooter</p>
+                                <p>Motocycle</p>
+                            </article>
+            
+                            <p class="public-trans-opt">Public Transport</p>
+            
+                            <article class="man-pow-mode-opt">
+                                <h3>Man Powered</h3>
+                                <p>Bicycles</p>
+                                <p>Walking</p>
+                            </article>
+                        </article>
+                        
+                    </article>
+                </article>
+                
+                <article class="transport-form-sect right-sect">
+                    <article>
+                        <article class="distance-label-wrapper">
+                            <label>Distance:</label>
+                            <div></div>
+                        </article>
+                        <input type="number" name="" placeholder="In km">
+                    </article>
+                    
+                    <article>
+                        <article class="transport-freq-label-wrapper">
+                            <label>Frequency:</label>
+                            <div></div>
+                        </article>
+                        <input type="number" name="freq_num" placeholder="How many times?">
+            
+                        <article class="transport-cat-freq">
+                            <p>Every day</p>
+                            <p>Every four days</p>
+                            <p>Every week</p>
+                            <p>Every month</p>
+                        </article>
+                    </article>
+                </article>
+            </form>
 
-                <h3>Man Powered</h3>
-                <p>Bicycles</p>
-                <p>Walking</p>
+            <article class="transport-ret-next-section">
+                <article class="energy-cat-prev-wrapper">
+                    <button class="energy-cat-prev-btn" type="button"><img src="prev.png" alt="">Energy Category</button>
+                    <div></div>
+                </article>
+
+                <article class="cloth-cat-next-wrapper">
+                    <button class="cloth-cat-next-btn" type="button">Clothing Category<img src="next.png" alt=""></button>
+                    <div></div>
+                </article>
             </article>
-
-            <label>Distance:</label>
-            <input type="number" name="" placeholder="How much distance do you cover?">
-
-            <label>Frequency:</label>
-            <input type="number" name="freq_num">
-
-            <select name="frequency">
-                <option value="day">Every day</option>
-                <option value="fortnight">Every four days</option>
-                <option value="week">Every week</option>
-                <option value="month">Every month</option>
-            </select>
+            
         </section> 
 
         <section class="outfit-cat-wrapper" style="display:none;">
@@ -311,7 +354,7 @@
             </form>
         </section> 
 
-        <section class="gagdet-cat-wrapper" style="display:none;">
+        <section class="gadget-cat-wrapper" style="display:none;">
             <article>
                 <h2>Category Name</h2>
                 <img src="" alt="Food Icon">
