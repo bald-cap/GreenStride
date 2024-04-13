@@ -51,6 +51,12 @@ body{
     text-align: center;
 }
 
+.site-name{
+    font-size: 20px;
+    margin-bottom: 2px;
+    color: #627B83;
+}
+
 .landing-btns{
     display: flex;
     justify-content: space-evenly;
@@ -96,11 +102,7 @@ body{
 
 /* ---------------------LOGIN SCREEN------------------- */
 
-.login-wrapper{
-    height: 100%;
-}
-
-.login-wrapper, .login-form-wrapper form{
+.login-wrapper, .login-form-wrapper form, .recycling-cat-wrapper form{
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -328,7 +330,7 @@ nav article a img{
     margin-top: 30px;
 }
 
-.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label, .mode-label-wrapper label, .distance-label-wrapper label, .transport-freq-label-wrapper label, .transport-ret-next-section button{
+.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label, .mode-label-wrapper label, .distance-label-wrapper label, .transport-freq-label-wrapper label, .recycling-meth-label-wrapper label, .recycling-qty-label-wrapper label, .recycling-freq-label-wrapper label{
     background-color: #334A51;
     font-size: 20px;
     border: 2px solid #000A16;
@@ -341,7 +343,7 @@ nav article a img{
     transform: translate(-2%, -11%);
 }
 
-.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div{
+.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div, .recycling-meth-label-wrapper div, .recycling-qty-label-wrapper div, .recycling-freq-label-wrapper div, .recycling-ret-next-section div{
     background-color: #000A16;
     position: relative;
     z-index: 0;
@@ -370,20 +372,20 @@ nav article a img{
     flex-direction: column;
 }
 
-.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input, .transport-cat-wrapper form input{
+.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input, .transport-cat-wrapper form input, .recycling-cat-wrapper input{
     margin-right: 10px;
     border-radius: 7px;
     background-color: #F0FCFA;
 }
 
-.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder, .transport-cat-wrapper form input::placeholder{
+.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder, .transport-cat-wrapper form input::placeholder, .recycling-cat-wrapper input::placeholder{
     color: #5E838E;
     text-align: center;
     /* font-size: 19px; */
     font-family: monospace;
 }
 
-.carbs-next-btn, .ret-next-section button, .energy-ret-next-section button, .transport-ret-next-section button{
+.carbs-next-btn, .ret-next-section button, .energy-ret-next-section button, .transport-ret-next-section button, .recycling-ret-next-section button, .transport-ret-next-section button{
     display: flex;
     font-size: 15px;
     font-family: inherit;
@@ -437,10 +439,10 @@ nav article a img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20%;
+    width: 30%;
 }
 
-.ret-next-section button{
+.ret-next-section button, .recycling-ret-next-section button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,11 +450,11 @@ nav article a img{
 }
 
 
-.energy-next-btn, .energy-ret-next-section button, .transport-ret-next-section button{
+.energy-next-btn, .energy-ret-next-section button, .transport-ret-next-section button, .recycling-ret-next-section button{
     font-weight: 600;
 }
 
-.ret-next-section img, .energy-ret-next-section img, .transport-ret-next-section img{
+.ret-next-section img, .energy-ret-next-section img, .transport-ret-next-section img, .recycling-ret-next-section img{
     height: 17px;
     width: auto;
 }
@@ -461,10 +463,32 @@ nav article a img{
     margin-right: 3px;
 }
 
-.energy-next-btn img, .transport-cat-next-btn img, .cloth-cat-next-btn img{
+.energy-next-btn img, .transport-cat-next-btn img, .waste-cat-next-btn img{
     margin-left: 3px;
 }
 
+.ret-next-section button{
+    position: absolute;
+    z-index: 1;
+    transform: translate(-2%, -10%);
+}
+
+.ret-next-section div{
+    position: relative;
+    z-index: 0;
+    background-color: #000A16;
+    border-radius: 7px;
+}
+
+.meat-prev-wrapper div{
+    width: 76.99px;
+    height: 24px;
+}
+
+.energy-next-wrapper div{
+    width: 167.71px;
+    height: 24px;
+}
 
 /* -----------------ENERGY CATEGORY------------------- */
 .energy-cat-wrapper{
@@ -630,10 +654,10 @@ nav article a img{
     transform: translate(-0.2%, 1%);
 }
 
-.transport-cat-wrapper form {
+.transport-cat-wrapper form{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 55%;
 }
 
@@ -670,7 +694,7 @@ nav article a img{
     align-items: center;
 }
 
-.modes-opt-wrapper h3, .public-trans-opt{
+.modes-opt-wrapper h3, .public-trans-opt, .recycling-left-sect h3{
     background-color: #43655A;
     padding: 1px 15px;
     border-radius: 5px;
@@ -690,8 +714,8 @@ nav article a img{
     font-weight: bold;
 }
 
-.transport-ret-next-section .cloth-cat-next-wrapper div{
-    width: 178.21px;
+.transport-ret-next-section .waste-cat-next-wrapper div{
+    width: 244.18px;
     height: 24px;
     /* position: relative; */
 }
@@ -700,6 +724,193 @@ nav article a img{
     height: 24px;
     width: 161.71px;
 }
+
+
+/* ----------------------RECYCLING CATEGORY------------------------ */
+
+.recycling-cat-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.recycling-cat-facecard{
+    margin-bottom: 20px;
+}
+
+.recycling-cat-facecard .recycling-facecard-container {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 30px;
+    background-color: #6B9B7D;
+    text-align: center;
+    border: 2px solid #000A16;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-7%, -7%);
+}
+
+.recycling-cat-facecard div{
+    position: relative;
+    z-index: 0;
+    width: 332.03px;
+    height: 247.69px;
+    background-color: #1D1D35;
+    border-radius: 30px;
+}
+
+.recycling-cat-facecard .recycling-img-wrapper{
+    border: 3px solid #000A16;
+    border-radius: 100px;
+    background-color:#0D3640;
+    clip-path: circle(83px);
+}
+
+.recycling-cat-facecard .recycling-img-wrapper img{
+    height: 170px;
+    width: auto;
+    clip-path: circle(80px);
+    transform: translate(-0.3%, 1%);
+}
+
+.recycling-meth-label-wrapper, .recycling-qty-label-wrapper, .recycling-freq-label-wrapper{
+    margin-bottom: 4px;
+}
+
+.recycling-meth-label-wrapper div{
+    height: 28px ;
+    width: 210.94px;
+}
+
+.recycling-qty-label-wrapper div{
+    height: 28px ;
+    width: 122.97px ;
+}
+
+.recycling-freq-label-wrapper div{
+    height: 28px;
+    width: 133.97px;
+}
+
+.recycling-cat-wrapper form{
+    width: 50%;
+    justify-content: space-around;
+}
+
+.recycling-cat-wrapper form .recycling-right-sect{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recycling-left-sect h3{
+    width: fit-content;
+}
+
+.recycling-ret-next-section{
+    margin-top: 10px;
+}
+
+.recycling-ret-next-section button, .transport-ret-next-section button{
+    position: absolute;
+    z-index: 1;
+    transform: translate(-2%, -13%);
+}
+.recycling-ret-next-section div{
+    height: 24px;
+    width: 230.69px;
+}
+
+
+/* ---------------------PROFILE.HTML PAGE------------------ */
+
+.profile-main, .profile-wrapper, .score-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-main{
+    background-color: #005E61;
+    width: 40%;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid #000A16;
+    color: #E6FEFE;
+    height: 85%;
+}
+
+.profile-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #000A16;
+    border-radius: 20px;
+    background-color: #365B66;
+    width: fit-content;
+    padding: 10px 15px;
+}
+
+.profile-main .profile-wrapper h3{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.profile-main .profile-wrapper p{
+    margin-bottom: 5px;
+    background-color: #0d364071;
+    padding: 1px 10px;
+    border-radius: 5px;
+    border: 2px solid #000A16;
+}
+
+.profile-img-wrapper img{
+    height: 200px;
+    width: auto;
+}
+
+.profile-main p{
+    color: #95B0B1;
+    text-align: center;
+}
+
+.sub-scores-wrapper{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+
+}
+
+.overall-score-wrapper p{
+    font-size: 20px;
+}
+
+.sub-scores-wrapper p{
+    font-size: 15px;
+}
+
+.score-section h3, .score-section h4{
+    border: 2px solid #000A16;
+    padding: 1px 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.score-section h3{
+    font-size: 17px ;
+}
+
+.score-section h4{
+    font-size: 15px;
+}
+
+
 
 /* 
 tablette site

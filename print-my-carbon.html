@@ -27,7 +27,7 @@
     </nav>
 
     <main>
-        <section class="food-cat-wrapper" style="display: none;">
+        <section class="food-cat-wrapper">
             <article class="food-cat-facecard">
                 <article class="facecard-container">
                     <h2>Food Category</h2>
@@ -38,7 +38,7 @@
                 <div></div>
             </article> 
 
-            <form action="cats.php" style="display: none;">
+            <form action="cats.php">
                 <article class="form-sect left-sect">
                     <article class="meat-label-wrapper">
                         <label>Meat Type:</label>
@@ -82,7 +82,7 @@
                 </article>
             </form>
 
-            <article class="carbs-next-wrapper" style="display: none;">
+            <article class="carbs-next-wrapper">
                 <button class="carbs-next-btn" type="button">Carbs <img src="next.png" alt=""></button>
                 <div></div>
             </article>
@@ -129,7 +129,6 @@
             </form>
 
             <article class="ret-next-section" style="display: none;">
-
                 <article class="meat-prev-wrapper">
                     <button class="meat-prev-btn" type="button"><img src="prev.png" alt=""> Meat</button>
                     <div></div>
@@ -206,7 +205,7 @@
             </article>
         </section> 
 
-        <section class="transport-cat-wrapper">
+        <section class="transport-cat-wrapper" style="display:none;">
             <article class="transport-cat-facecard">
                 <article class="transport-facecard-container">
                     <h2>Transportation Category</h2>
@@ -286,22 +285,22 @@
                     <div></div>
                 </article>
 
-                <article class="cloth-cat-next-wrapper">
-                    <button class="cloth-cat-next-btn" type="button">Clothing Category<img src="next.png" alt=""></button>
+                <article class="waste-cat-next-wrapper">
+                    <button class="waste-cat-next-btn" type="button">Waste Management Category<img src="next.png" alt=""></button>
                     <div></div>
                 </article>
             </article>
             
         </section> 
 
-        <section class="outfit-cat-wrapper" style="display:none;">
+        <!-- <section class="waste-cat-wrapper" style="display:none;">
             <article>
-                <h2>Category Name</h2>
+                <h2>Clothing Category</h2>
                 <img src="" alt="Outfit Icon">
                 <div></div>
             </article> 
 
-            <form action="cats.php" style="display:none;">
+            <form action="cats.php">
             <label>Meat Type:</label>
             <select name="meat_type">
                 <option value="beef">Beef</option>
@@ -326,7 +325,7 @@
 
         <section class="stationery-cat-wrapper" style="display:none;">
             <article>
-                <h2>Category Name</h2>
+                <h2>Stationery Category</h2>
                 <img src="" alt="Food Icon">
                 <div></div>
             </article> 
@@ -382,36 +381,72 @@
                 <option value="month">Every month</option>
             </select>
             </form>
-        </section> 
+        </section>  -->
 
-        <section class="recycling-cat-wrapper" style="display:none;">
-            <article>
-                <h2>Category Name</h2>
-                <img src="" alt="Recycling Icon">
+        <section class="recycling-cat-wrapper" style="display: none;">
+            <article class="recycling-cat-facecard">
+                <article class="recycling-facecard-container">
+                    <h2>Waste Management Category</h2>
+                    <article class="recycling-img-wrapper">
+                        <img src="reduce.png" alt="Food Icon">
+                    </article>
+                </article>
                 <div></div>
-            </article> 
+            </article>  
 
-            <form action="cats.php" style="display:none;">
-            <label>Meat Type:</label>
-            <select name="meat_type">
-                <option value="beef">Beef</option>
-                <option value="pork">Pork</option>
-                <option value="fish">Fish</option>
-            </select>
+            <form action="cats.php">
+                <article class="recycling-form-sect recycling-left-sect">
+                    <article class="recycling-meth-label-wrapper">
+                        <label>Recycling Method:</label>
+                        <div></div>
+                    </article>
+                    <article class="platics-mgnt">
+                        <h3>Plastic</h3>
+                        <p>By Sorting</p>
+                        <p>By Incineration</p>
+                        <p>Without Sorting</p>
+                    </article>
+    
+                    <article class="metal-mgnt">
+                        <h3>Metals</h3>
+                        <p>Pork</p>
+                        <p>Fish</p>
+                    </article>
+                </article>
+                
 
-            <label>Quantity:</label>
-            <input type="number" name="number_of_meats" placeholder="Quantity of meat">
-
-            <label>Frequency:</label>
-            <input type="number" name="frequency_number">
-
-            <select name="frequency">
-                <option value="day">Every day</option>
-                <option value="fortnight">Every four days</option>
-                <option value="week">Every week</option>
-                <option value="month">Every month</option>
-            </select>
+                <article class="recycling-form-sect recycling-right-sect">
+                    <article>
+                        <article class="recycling-qty-label-wrapper">
+                            <label>Quantity:</label>
+                            <div></div>
+                        </article>
+                        <input type="number" name="number_of_meats" placeholder="How much waste?">
+                    </article>
+    
+                    <article>
+                        <article class="recycling-freq-label-wrapper">
+                            <label>Frequency:</label>
+                            <div></div>
+                        </article>
+                        <input type="number" name="frequency_number" placeholder="How often?">
+        
+                        <article class="recycling-opt-wrapper">
+                            <p>Every day</p>
+                            <p>Every four days</p>
+                            <p>Every week</p>
+                            <p>Every month</p>
+                        </article>
+                    </article>
+                </article>
             </form>
+
+            <article class="recycling-ret-next-section">
+                <article class="recycling-cat-prev-wrapper">
+                    <button class="transport-cat-prev-btn" type="button"><img src="prev.png" alt="">Transportation Category</button>
+                    <div></div>
+                </article>
+            </article>
         </section> 
   </main>
 </body>
