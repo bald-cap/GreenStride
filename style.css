@@ -40,6 +40,86 @@ body{
     clip-path: circle(25px);
 }
 
+.pmc-main p{
+    transition: 0.4s;
+    width: fit-content;
+}
+
+.pmc-main p:hover{
+    background-color: #354B46;
+    width: fit-content;
+    padding: 1px 10px;
+    border: 2px solid #000A16;
+    border-radius: 5px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.pmc-main p:active{
+    background-color: #E7FFEF;
+    color: #000A16;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+nav article{
+    border: 2px solid #000A16;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: #334A51;
+    transition: 0.4s;
+    height: fit-content;
+}
+
+nav a{
+    color: #F0FCFA;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav article a img{
+    height: 20px;
+    width: auto;
+    margin-right: 7px;
+}
+
+nav article:hover{
+    background-color: #455C6D;
+    transition: 0.4s;
+    /* color: ; */
+}
+
+.page-link{
+    background-color: #A3BDC5;
+}
+
+.page-link:hover{
+    background-color: #6F888F;
+    cursor: pointer;
+}
+
+.page-link a{
+    color: #000A16;
+    font-size: 15px;
+}
+
+.sign-out-btn{
+    background-color: #000A16;
+    border: 2px solid #3D4856;
+}
+
+.sign-out-btn:hover{
+    background-color: #7f2c00e0;
+    cursor: pointer;
+    border: 2px solid #000A16;
+}
+
 
 /*-----------------------LANDING MAIN (LOGIN, SIGNUP)------------------ */
 .landing-main{
@@ -239,32 +319,6 @@ body{
 
 /* ------------------------PRINT-MY-CARBON.HTML PAGE---------------------- */
 /* ------------------FOOD CATEGORY--------------------- */
-nav{
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-nav article{
-    border: 2px solid #000A16;
-    padding: 3px 10px;
-    border-radius: 5px;
-    background-color: #334A51;
-}
-
-nav a{
-    color: #F0FCFA;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav article a img{
-    height: 20px;
-    width: auto;
-    margin-right: 7px;
-}
 
 .food-cat-wrapper{
     display: flex;
@@ -839,10 +893,10 @@ nav article a img{
     background-color: #005E61;
     width: 40%;
     border-radius: 10px;
-    margin-top: 20px;
+    margin: 20px 0 40px 0;
     border: 2px solid #000A16;
     color: #E6FEFE;
-    height: 85%;
+    /* height: 85%; */
 }
 
 .profile-img-wrapper{
@@ -908,6 +962,85 @@ nav article a img{
 
 .score-section h4{
     font-size: 15px;
+}
+
+
+/* -------------------LEADERBAORD.HTML PAGE------------------*/
+
+.leaberboard-main{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    flex-direction: column;
+    text-align: center;
+    background-color: #334A51;
+    margin: 50px 0;
+    border-radius: 10px;
+    width: 40%;
+    border: 3px solid #000A16;
+    overflow: scroll;
+    color: #E8FDFF;
+}
+
+.lb-img-wrapper{
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lb-img-wrapper img{
+    height: 120px;
+    width: auto;
+    background-color: #2C6575;
+    border: 3px solid #000A16;
+    padding: 5px 20px;
+    border-radius: 7px;
+}
+
+.lb-img-wrapper p{
+    font-size: 17px;
+    /* color: #9CB5BD; */
+    margin-bottom: 10px;
+    border: 2px solid #000A16;
+    width: fit-content;
+    padding: 1px 15px;
+    border-radius: 7px;
+    background-color: #2E454C;
+}
+
+.leaberboard-main .lb-list-wrapper{
+    display: flex;
+}
+
+.leaberboard-main .lb-list-wrapper article{
+    width: 100%;
+}
+
+
+.leaberboard-main article h3, .leaberboard-main article h2{
+    height: 24px;
+    margin: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+}
+
+
+.leaberboard-main .lb-numbering .grey-lb{
+    background-color: #627B83;
+    border-radius: 3px 0 0 3px;
+}
+
+.leaberboard-main .lb-usernames-list .grey-lb{
+    background-color: #627B83;
+}
+
+.leaberboard-main .lb-scores-list .grey-lb{
+    background-color: #627B83;
+    border-radius: 0 3px 3px 0;
+
 }
 
 
