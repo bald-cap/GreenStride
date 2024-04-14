@@ -92,7 +92,7 @@ nav article a img{
 nav article:hover{
     background-color: #455C6D;
     transition: 0.4s;
-    /* color: ; */
+    cursor: pointer;
 }
 
 .page-link{
