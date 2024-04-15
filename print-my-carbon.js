@@ -398,3 +398,30 @@ allOptsPtag.forEach(function(opt){
         }
     })
 })
+
+const submitResBtn = document.querySelector(".done-btn-wrapper");
+const submitResLab = document.querySelector(".done-btn-wrapper button");
+
+submitResBtn.addEventListener('mouseenter', function(){
+    submitResBtn.style.cursor = 'pointer';
+    submitResLab.style.cursor = 'pointer';
+    submitResLab.style.transition = '0.4s'
+    submitResLab.style.backgroundColor = '#E1EBE4';
+    console.log(submitResLab.style.backgroundColor)
+})
+
+submitResBtn.addEventListener('mouseleave', function(){
+    submitResBtn.style.cursor = 'default';
+    submitResLab.style.cursor = 'default';
+    submitResLab.style.transition = '0.4s'
+    submitResLab.style.backgroundColor = '#96AFB8';
+})
+
+submitResBtn.addEventListener('click', function(){
+    submitResLab.style.transform = 'translate(0%, 0%)';
+    submitResLab.style.transition = '0s'
+
+    setTimeout(function(){
+        submitResLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
+})

@@ -987,6 +987,9 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .recycling-ret-next-section{
     margin-top: 10px;
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
 }
 
 .recycling-ret-next-section button, .transport-ret-next-section button{
@@ -994,11 +997,26 @@ article.ret-next-section.eat-out-ret-next-sect {
     z-index: 1;
     transform: translate(-2%, -13%);
 }
+
 .recycling-ret-next-section div{
     height: 24px;
     width: 230.69px;
 }
 
+.done-btn-wrapper{
+    display: flex;
+    width: fit-content;
+}
+
+.done-btn-wrapper a{
+    color: #000A16;
+    text-decoration: none;
+    width: 100%;
+}
+
+.done-btn-wrapper div{
+    width: 73.49px;
+}
 
 /* ---------------------PROFILE.HTML PAGE------------------ */
 
@@ -1181,6 +1199,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .hp-main h1{
     text-align: center;
+    font-size: 50px;
 }
 
 .signup-login-article{
@@ -1196,17 +1215,26 @@ article.ret-next-section.eat-out-ret-next-sect {
     border-radius: 7px;
     position: absolute;
     z-index: 1;
-    transform: translate(-4%, -13%);
-    background-color: #00A98B;
-    color: #E9FEF7;
+    transform: translate(-2%, -13%);
+    background-color: #98B0A9;
+    font-weight: 600;
+}
+
+.signup-login-article a{
+    color: #000A16;
+    text-decoration: none;
 }
 
 .signup-login-article div{
     position: relative;
     z-index: 0;
     height: 30px;
-    width: 70.99px;
+    width: 180.95px;
     background-color: #142219;
+}
+
+.hp-main article p{
+    text-align: center;
 }
 /* 
 tablette site
