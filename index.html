@@ -5,8 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GreenStride</title>
         <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
     </head>
     <body>
+        <nav>
+            <article class="return-btn-wrapper" style="display: none;">
+                <a href="#"><img src="back.png" alt=""> Return</a>
+            </article>
+        </nav>
+
         <main class="landing-main">
             <h3 class="site-name">GreenStride</h3>
             <article class="logo-wrapper">
@@ -29,7 +36,6 @@
                 </article>
             </section>
 
-
             <section class="login-wrapper" style="display:none;">
                 <h1>Log In</h1>
                 <article class="login-form-wrapper">
@@ -49,7 +55,7 @@
                 </article>
 
                 <article class="login-btn">
-                    <button type="submit">Log In</button>
+                    <button type="submit"><a href="homepage.html">Log In</a></button>
                     <div></div>
                 </article>
                 
@@ -78,7 +84,7 @@
                     <input type="password" name="confPassword" placeholder="Enter your password again">
 
                     <article class="signup-article">
-                        <button type="submit">Sign Up</button>
+                        <button type="submit"><a href="homepage.html">Sign Up</a></button>
                         <div></div>
                     </article>
                 </form>

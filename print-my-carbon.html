@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenStride - Homepage</title>
+  <title>GreenStride - Print-My-Carbon</title>
   <link rel="stylesheet" href="style.css">
   <script src="print-my-carbon.js" defer></script>
 </head>
@@ -43,7 +43,12 @@
                 <div></div>
             </article> 
 
-            <form action="cats.php" class="meat-wrapper">
+            <article class="eat-in-label-wrapper">
+                <h3>Eating Home</h3>
+                <div></div>
+            </article>
+
+            <form action="cats.php" class="meat-wrapper eat-in-meat">
                 <article class="form-sect left-sect">
                     <article class="meat-label-wrapper">
                         <label>Meat Type:</label>
@@ -87,7 +92,7 @@
                 </article>
             </form>
 
-            <article class="carbs-next-wrapper">
+            <article class="carbs-next-wrapper eat-in-carbs">
                 <button class="carbs-next-btn" type="button">Carbs <img src="next.png" alt=""></button>
                 <div></div>
             </article>
@@ -122,7 +127,7 @@
                         <div></div>
                     </article>
 
-                    <input type="number" name="freq num" placeholder="How often?">
+                    <input type="number" name="freq-num" placeholder="How often?">
 
                     <article class="freq-opt">
                         <p> Every day </p>
@@ -133,9 +138,75 @@
                 </article>
             </form>
 
-            <article class="ret-next-section" style="display: none;">
-                <article class="meat-prev-wrapper">
-                    <button class="meat-prev-btn" type="button"><img src="prev.png" alt=""> Meat</button>
+            <article class="ret-next-section eat-in-ret-next-sect" style="display: none;">
+                <article class="eat-in-meat-prev-wrapper">
+                    <button class="eat-in-meat-prev-btn" type="button"><img src="prev.png" alt="">Meat</button>
+                    <div></div>
+                </article>
+
+                <article class="eat-out-next-wrapper">
+                    <button class="eat-out-next-btn" type="button">Eat Out <img src="next.png" alt=""></button>
+                    <div></div>
+                </article>
+            </article>
+
+            <article class="eat-out-label-wrapper" style="display: none;">
+                <h3>Eating Out</h3>
+                <div></div>
+            </article>
+
+            <form action="" class="eat-out-wrapper" style="display: none;">
+
+                <article class="eat-out-form-sect left-sect">
+                    <article class="eat-out-meal">
+                        <article class="eat-out-meal-label">
+                            <label>Meal</label>
+                            <div></div>
+                        </article>
+    
+                        <article class="eat-out-opt-wrapper">
+                            <p>Rice</p>
+                            <p>Vegetables</p>
+                            <p>Beef</p>
+                            <p>Chicken</p>
+                        </article>
+                    </article>
+    
+                    <article class="eat-out-qty-wrapper">
+                        <article class="eat-out-qty-label-wrapper">
+                            <label>Quantity:</label>
+                            <div></div>
+                        </article>
+    
+                        <article >
+                            <input type="number" name="nofPlates" placeholder="Number of:">
+                            <p> Bowls/ Plates</p>
+                        </article>
+                    </article>
+                </article>
+
+                <article class="eat-out-form-sect eat-out-qty-freq right-sect">
+                    <article class="eat-out-freq-label-wrapper">
+                        <label>Frequency:</label>
+                        <div></div>
+                    </article>
+    
+                    <article class="eat-out-freq-wrapper">
+                        <input type="number" name="freq num" placeholder="How often?">
+    
+                        <article class="eat-out-freq-opt">
+                        <p> Every day </p>
+                        <p> Every four days </p>
+                        <p> Every week </p>
+                        <p> Every month </p>                   
+                        </article>
+                    </article>
+                </article>
+            </form>
+
+            <article class="ret-next-section eat-out-ret-next-sect" style="display: none;">
+                <article class="eat-in-prev-wrapper">
+                    <button class="eat-in-prev-btn" type="button"><img src="prev.png" alt=""> Eat In</button>
                     <div></div>
                 </article>
 
@@ -144,7 +215,6 @@
                     <div></div>
                 </article>
             </article>
-
         </section> 
 
         <section class="energy-cat-wrapper" style="display: none;">
@@ -169,7 +239,7 @@
                         <p>Grid</p>
                         <p>Solar</p>
                         <p>Gas <span>(for heating)</span></p>
-                        <p> LPG Gas <span>(for Cooking)</span></p>                
+                        <p>LPG Gas <span>(for Cooking)</span></p>                
                     </article>
         
                     <article class="energy-qty-wrapper">
@@ -447,7 +517,7 @@
             </form>
 
             <article class="recycling-ret-next-section">
-                <article class="recycling-cat-prev-wrapper">
+                <article class="transport-cat-prev-wrapper">
                     <button class="transport-cat-prev-btn" type="button"><img src="prev.png" alt="">Transportation Category</button>
                     <div></div>
                 </article>

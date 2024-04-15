@@ -1,10 +1,13 @@
 const carbsNextBtn = document.querySelector(".carbs-next-wrapper")
 const carbsForm = document.querySelector(".carbs-wrapper")
-const foodRetNextSect = document.querySelector(".ret-next-section")
+const eatinPrevNextSect = document.querySelector(".eat-in-ret-next-sect")
+
+const eatoutPrevNextSect = document.querySelector(".eat-out-ret-next-sect")
 const meatFormWrap = document.querySelector(".meat-wrapper")
 
 const carbsNextLab = document.querySelector(".carbs-next-wrapper button")
 const carbsNextDiv = document.querySelector(".carbs-next-wrapper div")
+
 carbsNextBtn.addEventListener('mouseenter', function(){
     carbsNextLab.style.backgroundColor = '#546C73'
     carbsNextLab.style.color = '#EAFDFF'
@@ -31,59 +34,367 @@ carbsNextBtn.addEventListener('click', function(){
         carbsNextBtn.style.display = 'none';
 
         carbsForm.style.display = 'flex';
-        foodRetNextSect.style.display = 'flex';
+        eatinPrevNextSect.style.display = 'flex';
 
         carbsNextLab.style.transform = 'translate(-3%, -13%)';
     }, 270)
     
 })
 
+const meatPrevLab = document.querySelector(".eat-in-meat-prev-btn")
+const meatPrevDiv = document.querySelector(".eat-in-meat-prev-wrapper div")
+const meatPrevBtn = document.querySelector(".ret-next-section .eat-in-meat-prev-wrapper")
 
-const meatRetBtn = document.querySelector(".ret-next-section .meat-prev-wrapper")
-meatRetBtn.addEventListener('click', function(){
-    carbsForm.style.display = 'none';
-    foodRetNextSect.style.display = 'none';
+meatPrevBtn.addEventListener('mouseenter', function(){
+    meatPrevLab.style.backgroundColor = '#546C73'
+    meatPrevLab.style.color = '#EAFDFF'
 
-    meatFormWrap.style.display = 'flex';
-    carbsNextBtn.style.display = 'flex';
+    meatPrevBtn.style.cursor = 'pointer';
+    meatPrevLab.style.cursor = 'pointer'
+    meatPrevLab.style.transition = '0.4s';
+})
+
+meatPrevBtn.addEventListener('mouseleave', function(){
+    meatPrevLab.style.backgroundColor = '#96AFB8'
+    meatPrevLab.style.color = '#21383F'
+
+    meatPrevBtn.style.pointer = 'default';
+    meatPrevLab.style.cursor = 'default';
+    meatPrevLab.style.transition = '0.4s';
+})
+
+meatPrevBtn.addEventListener('click', function(){
+    meatPrevLab.style.transition = '0s';
+    meatPrevLab.style.transform = 'translate(0%, 0%)';
+    setTimeout(function(){
+        carbsForm.style.display = 'none';
+        eatinPrevNextSect.style.display = 'none';
+
+        meatFormWrap.style.display = 'flex';
+        carbsNextBtn.style.display = 'flex';    
+
+        meatPrevLab.style.transform = 'translate(-2%, -10%)';
+    }, 270)
+    
+})
+
+const eatinLab = document.querySelector(".eat-in-label-wrapper")
+const eatinCarbs = document.querySelector(".carbs-wrapper")
+
+const eatoutLab = document.querySelector(".eat-out-label-wrapper")
+const eatoutWrapper = document.querySelector(".eat-out-wrapper")
+
+const eatoutNextBtn = document.querySelector(".eat-out-next-wrapper")
+const eatoutNextLab = document.querySelector(".eat-out-next-btn")
+
+eatoutNextBtn.addEventListener('mouseenter', function(){
+    eatoutNextLab.style.backgroundColor = '#546C73'
+    eatoutNextLab.style.color = '#EAFDFF'
+
+    eatoutNextBtn.style.cursor = 'pointer';
+    eatoutNextLab.style.cursor = 'pointer'
+    eatoutNextLab.style.transition = '0.4s';
+})
+
+eatoutNextBtn.addEventListener('mouseleave', function(){
+    eatoutNextLab.style.backgroundColor = '#96AFB8'
+    eatoutNextLab.style.color = '#21383F'
+
+    eatoutNextBtn.style.pointer = 'default';
+    eatoutNextLab.style.cursor = 'default';
+    eatoutNextLab.style.transition = '0.4s';
+})
+
+eatoutNextBtn.addEventListener('click', function(){
+    eatoutNextLab.style.transition = '0s';
+    eatoutNextLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        eatinLab.style.display = 'none';
+        eatinCarbs.style.display = 'none';
+        eatinPrevNextSect.style.display = 'none';
+
+        eatoutLab.style.display = 'flex';
+        eatoutWrapper.style.display = 'flex'
+
+        eatoutPrevNextSect.style.display = 'flex'
+
+        eatoutNextLab.style.transform = 'translate(-2%, -10%)';
+    }, 270)
+})
+
+
+const eatinPrevBtn = document.querySelector(".eat-in-prev-wrapper")
+const eatinPrevLab = document.querySelector(".eat-in-prev-btn")
+
+eatinPrevBtn.addEventListener('mouseenter', function(){
+    eatinPrevLab.style.backgroundColor = '#546C73'
+    eatinPrevLab.style.color = '#EAFDFF'
+
+    eatinPrevBtn.style.cursor = 'pointer';
+    eatinPrevLab.style.cursor = 'pointer'
+    eatinPrevLab.style.transition = '0.4s';
+})
+
+eatinPrevBtn.addEventListener('mouseleave', function(){
+    eatinPrevLab.style.backgroundColor = '#96AFB8'
+    eatinPrevLab.style.color = '#21383F'
+
+    eatinPrevBtn.style.pointer = 'default';
+    eatinPrevLab.style.cursor = 'default';
+    eatinPrevLab.style.transition = '0.4s';
+})
+
+eatinPrevBtn.addEventListener('click', function(){
+    eatinPrevLab.style.transition = '0s';
+    eatinPrevLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        eatoutLab.style.display = 'none';
+        eatoutWrapper.style.display = 'none';
+
+        eatoutPrevNextSect.style.display = 'none';
+
+        eatinLab.style.display = 'flex';
+        eatinCarbs.style.display = 'flex';
+        eatinPrevNextSect.style.display = 'flex';
+
+        eatinPrevLab.style.transform = 'translate(-2%, -10%)';
+    }, 270)
 })
 
 const egyNextBtn = document.querySelector(".ret-next-section .energy-next-wrapper")
+const egyNextLab = document.querySelector(".energy-next-btn")
+const egyNextDiv = document.querySelector(".energy-next-wrapper div")
+
 const egyWrapper = document.querySelector(".energy-cat-wrapper")
 const foodWrapper = document.querySelector(".food-cat-wrapper")
-egyNextBtn.addEventListener('click', function(){
-    foodWrapper.style.display = 'none';
-    egyWrapper.style.display = 'flex';
+
+egyNextBtn.addEventListener('mouseenter', function(){
+    egyNextLab.style.backgroundColor = '#546C73';
+    egyNextLab.style.color = '#EAFDFF';
+
+    egyNextBtn.style.cursor = 'pointer';
+    egyNextLab.style.cursor = 'pointer'
+    egyNextLab.style.transition = '0.4s';
 })
 
-const foodRetBtn = document.querySelector(".food-cat-prev-wrapper")
-foodRetBtn.addEventListener('click', function(){
-    egyWrapper.style.display = 'none';
-    foodWrapper.style.display = 'flex';
+egyNextBtn.addEventListener('mouseleave', function(){
+    egyNextLab.style.backgroundColor = '#96AFB8';
+    egyNextLab.style.color = '#21383F';
+
+    egyNextBtn.style.pointer = 'default';
+    egyNextLab.style.cursor = 'default';
+    egyNextLab.style.transition = '0.4s';
+})
+
+egyNextBtn.addEventListener('click', function(){
+    egyNextLab.style.transition = '0s';
+    egyNextLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        foodWrapper.style.display = 'none';
+        egyWrapper.style.display = 'flex';
+
+        egyNextLab.style.transform = 'translate(-2%, -10%)';
+    }, 270)
+    
+})
+
+const foodPrevBtn = document.querySelector(".food-cat-prev-wrapper")
+const foodPrevLab = document.querySelector(".food-cat-prev-btn")
+const foodPrevDiv = document.querySelector(".food-cat-prev-wrapper div")
+
+foodPrevBtn.addEventListener('mouseenter', function(){
+    foodPrevLab.style.backgroundColor = '#546C73';
+    foodPrevLab.style.color = '#EAFDFF';
+
+    foodPrevBtn.style.cursor = 'pointer';
+    foodPrevLab.style.cursor = 'pointer'
+    foodPrevLab.style.transition = '0.4s';
+})
+
+foodPrevBtn.addEventListener('mouseleave', function(){
+    foodPrevLab.style.backgroundColor = '#96AFB8';
+    foodPrevLab.style.color = '#21383F';
+
+    foodPrevBtn.style.pointer = 'default';
+    foodPrevLab.style.cursor = 'default';
+    foodPrevLab.style.transition = '0.4s';
+})
+
+foodPrevBtn.addEventListener('click', function(){
+    foodPrevLab.style.transition = '0s';
+    foodPrevLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        egyWrapper.style.display = 'none';
+        foodWrapper.style.display = 'flex';
+
+        foodPrevLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
 })
 
 const transNextBtn = document.querySelector('.transport-cat-next-wrapper')
+const transNextLab = document.querySelector(".transport-cat-next-btn")
+const transNextDiv = document.querySelector(".transport-cat-next-wrapper div")
 const transWrapper = document.querySelector(".transport-cat-wrapper")
+
+transNextBtn.addEventListener('mouseenter', function(){
+    transNextLab.style.backgroundColor = '#546C73';
+    transNextLab.style.color = '#EAFDFF';
+
+    transNextBtn.style.cursor = 'pointer';
+    transNextLab.style.cursor = 'pointer'
+    transNextLab.style.transition = '0.4s';
+})
+
+transNextBtn.addEventListener('mouseleave', function(){
+    transNextLab.style.backgroundColor = '#96AFB8';
+    transNextLab.style.color = '#21383F';
+
+    transNextBtn.style.pointer = 'default';
+    transNextLab.style.cursor = 'default';
+    transNextLab.style.transition = '0.4s';
+})
+
 transNextBtn.addEventListener('click', function(){
-    egyWrapper.style.display = 'none';
-    transWrapper.style.display = 'flex';
+    transNextLab.style.transition = '0s';
+    transNextLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        egyWrapper.style.display = 'none';
+        transWrapper.style.display = 'flex';
+
+        transNextLab.style.transform = 'translate(-1.5%, -13%)';
+    }, 270)
+    
 })
 
 const egyPrevBtn = document.querySelector(".energy-cat-prev-wrapper")
+const egyPrevLab = document.querySelector(".energy-cat-prev-btn")
+const egyPrevDiv = document.querySelector(".energy-cat-prev-wrapper div")
+
+egyPrevBtn.addEventListener('mouseenter', function(){
+    egyPrevLab.style.backgroundColor = '#546C73';
+    egyPrevLab.style.color = '#EAFDFF';
+
+    egyPrevBtn.style.cursor = 'pointer';
+    egyPrevLab.style.cursor = 'pointer'
+    egyPrevLab.style.transition = '0.4s';
+})
+
+egyPrevBtn.addEventListener('mouseleave', function(){
+    egyPrevLab.style.backgroundColor = '#96AFB8';
+    egyPrevLab.style.color = '#21383F';
+
+    egyPrevBtn.style.pointer = 'default';
+    egyPrevLab.style.cursor = 'default';
+    egyPrevLab.style.transition = '0.4s';
+})
+
 egyPrevBtn.addEventListener('click', function(){
-    transWrapper.style.display = 'none';
-    egyWrapper.style.display = 'flex';
+    egyPrevLab.style.transition = '0s';
+    egyPrevLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        transWrapper.style.display = 'none';
+        egyWrapper.style.display = 'flex';
+
+        egyPrevLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
+    
 })
 
 const recycNextBtn = document.querySelector(".waste-cat-next-wrapper")
+const recycNextLab = document.querySelector(".waste-cat-next-btn")
+const recycNextDiv = document.querySelector(".waste-cat-next-wrapper div")
+
 const recycWrapper = document.querySelector(".recycling-cat-wrapper")
-recycNextBtn.addEventListener('click', function(){
-    transWrapper.style.display = 'none';
-    recycWrapper.style.display = 'flex';
+
+recycNextBtn.addEventListener('mouseenter', function(){
+    recycNextLab.style.backgroundColor = '#546C73';
+    recycNextLab.style.color = '#EAFDFF';
+
+    recycNextBtn.style.cursor = 'pointer';
+    recycNextLab.style.cursor = 'pointer'
+    recycNextLab.style.transition = '0.4s';
 })
 
-const recycPrevBtn = document.querySelector(".recycling-cat-prev-wrapper")
-recycPrevBtn.addEventListener('click', function(){
-    recycWrapper.style.display = 'none';
-    transWrapper.style.display = 'flex';
+recycNextBtn.addEventListener('mouseleave', function(){
+    recycNextLab.style.backgroundColor = '#96AFB8';
+    recycNextLab.style.color = '#21383F';
+
+    recycNextBtn.style.pointer = 'default';
+    recycNextLab.style.cursor = 'default';
+    recycNextLab.style.transition = '0.4s';
+})
+
+recycNextBtn.addEventListener('click', function(){
+    recycNextLab.style.transition = '0s';
+    recycNextLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        transWrapper.style.display = 'none';
+        recycWrapper.style.display = 'flex';
+
+        recycNextLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
+    
+})
+
+const transPrevBtn = document.querySelector(".transport-cat-prev-wrapper")
+const transPrevLab = document.querySelector(".transport-cat-prev-btn")
+const transPrevDiv = document.querySelector(".transport-cat-prev-wrapper div")
+
+transPrevBtn.addEventListener('mouseenter', function(){
+    transPrevLab.style.backgroundColor = '#546C73';
+    transPrevLab.style.color = '#EAFDFF';
+
+    transPrevBtn.style.cursor = 'pointer';
+    transPrevLab.style.cursor = 'pointer'
+    transPrevLab.style.transition = '0.4s';
+})
+
+transPrevBtn.addEventListener('mouseleave', function(){
+    transPrevLab.style.backgroundColor = '#96AFB8';
+    transPrevLab.style.color = '#21383F';
+
+    transPrevBtn.style.pointer = 'default';
+    transPrevLab.style.cursor = 'default';
+    transPrevLab.style.transition = '0.4s';
+})
+
+transPrevBtn.addEventListener('click', function(){
+    transPrevLab.style.transition = '0s';
+    transPrevLab.style.transform = 'translate(0%, 0%)';
+
+    setTimeout(function(){
+        recycWrapper.style.display = 'none';
+        transWrapper.style.display = 'flex';
+
+        transPrevLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
+})
+
+const allOptsPtag = document.querySelectorAll(".pmc-main p")
+allOptsPtag.forEach(function(opt){
+    opt.addEventListener('click', function(){
+        console.log(opt.classList)
+        if (opt.className === ''){
+            opt.className = 'pmc-main-p-selected';
+            console.log(opt.classList)
+        }else if(opt.className === 'pmc-main-p-selected'){
+            if(opt.textContent === 'Public Transport'){
+                opt.className = 'public-trans-opt'
+            }else{
+                opt.className = ''
+                console.log(opt.classList)
+            }
+        }else if(opt.className === 'public-trans-opt'){
+            console.log(opt.classList)
+            opt.className = 'pmc-main-p-selected'
+            // opt.style.padding= '1px 13px;'
+        }
+    })
 })

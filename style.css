@@ -7,7 +7,7 @@ section{
     width: 100%;
 }
 
-body, .landing-btns, .landing-main /*, .login-wrapper, .login-form-wrapper form*/{
+body, .landing-btns, .landing-main{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,19 +46,29 @@ body{
 }
 
 .pmc-main p:hover{
-    background-color: #354B46;
+    background-color: #2D8474;
     width: fit-content;
     padding: 1px 10px;
     border: 2px solid #000A16;
     border-radius: 5px;
     transition: 0.4s;
     cursor: pointer;
+    color: #000A16;
 }
 
 .pmc-main p:active{
     background-color: #E7FFEF;
     color: #000A16;
 }
+
+.pmc-main-p-selected{
+    background-color : #0E7377;
+    border : 2px solid #000A16;
+    border-radius: 5px;
+    padding : 1px 10px;
+    width: fit-content;
+}
+
 
 nav{
     display: flex;
@@ -68,11 +78,13 @@ nav{
 
 nav article{
     border: 2px solid #000A16;
-    padding: 3px 10px;
     border-radius: 5px;
     background-color: #334A51;
     transition: 0.4s;
     height: fit-content;
+    width: fit-content;
+
+    display: flex;
 }
 
 nav a{
@@ -81,6 +93,8 @@ nav a{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 3px 10px;
 }
 
 nav article a img{
@@ -120,6 +134,14 @@ nav article:hover{
     border: 2px solid #000A16;
 }
 
+.return-btn-wrapper{
+    background-color: #2F3640;
+}
+
+.return-btn-wrapper:hover{
+   background-color: #000a16db;
+   border: 1.7px solid #3D4856;
+}
 
 /*-----------------------LANDING MAIN (LOGIN, SIGNUP)------------------ */
 .landing-main{
@@ -133,7 +155,7 @@ nav article:hover{
 
 .site-name{
     font-size: 20px;
-    margin-bottom: 2px;
+    margin: 2px;
     color: #627B83;
 }
 
@@ -142,7 +164,7 @@ nav article:hover{
     justify-content: space-evenly;
 }
 
-.landing-btns .login-article, .landing-btns .signup-article{
+.landing-btns .login-article, .landing-btns .signup-article, .signup-login-article{
     display: flex;
 }
 
@@ -160,7 +182,7 @@ nav article:hover{
 }
 
 .landing-btns .signup-article button, .landing-btns .login-article button{
-    transform: translate(-5%, -13%)
+    transform: translate(-4%, -13%)
 }
 
 
@@ -223,8 +245,16 @@ nav article:hover{
     padding: 0 40px;
     position: absolute;
     z-index: 1;
-    transform: translate(-3%, -10%);
+    transform: translate(-2%, -11%);
     font-size: 40px;
+}
+
+.email-label-wrapper label{
+    transform: translate(-3%, -10%);
+}
+
+.email-label-wrapper div{
+    border-radius: 10px;
 }
 
 .label-wrapper div{
@@ -233,7 +263,7 @@ nav article:hover{
     position: relative;
     z-index: 0;
     background-color: #96AFB8;
-    border-radius: 10px;
+    border-radius: 10px 9px 11px 10px;
 }
 
 .login-btn button{
@@ -245,8 +275,13 @@ nav article:hover{
     padding: 0px 20px;
     background-color: #F0FCFA;
     width: auto;
-    transform: translate(-4%, -10%);
+    transform: translate(-3.5%, -10%);
     font-family: inherit;
+}
+
+.login-btn button a, .signup-wrapper .signup-article button a{
+    color: #000A16;
+    text-decoration: none;
 }
 
 .login-btn div{
@@ -260,6 +295,12 @@ nav article:hover{
 
 
 /* ------------------------SIGN UP SCREEN---------------------*/
+.signup-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .signup-wrapper form{
     display: flex;
     align-items: center;
@@ -304,7 +345,7 @@ nav article:hover{
     background-color: #F0FCFA;
     width: auto;
     font-family: inherit;
-    transform: translate(-4%, -10%);
+    transform: translate(-3%, -10%);
 }
 
 .signup-wrapper .signup-article div{
@@ -366,13 +407,60 @@ nav article:hover{
     clip-path: circle(80px);
 }
 
+.eat-in-label-wrapper, .eat-out-label-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.eat-in-label-wrapper h3, .eat-out-label-wrapper h3{
+    background-color: #2D8474;
+    font-size: 15px;
+    border: 2px solid #000A16;
+    text-align: center;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 0px 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.eat-in-label-wrapper h3{
+    transform: translate(-2%, -11%);
+}
+
+.eat-out-label-wrapper h3{
+    transform: translate(-3%, -11%);
+}
+
+.eat-in-label-wrapper div{
+    background-color: #031700;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px;
+    width: 114.72px;
+    height: 22px;
+}
+
+.eat-out-label-wrapper div{
+    background-color: #031700;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px;
+    width: 106.48px;
+    height: 22px;
+}
+
+
+
 .food-cat-wrapper form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    width: 70%;
+    width: 50%;
 }
 
 /* to edit
@@ -384,7 +472,7 @@ nav article:hover{
     margin-top: 30px;
 }
 
-.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label, .mode-label-wrapper label, .distance-label-wrapper label, .transport-freq-label-wrapper label, .recycling-meth-label-wrapper label, .recycling-qty-label-wrapper label, .recycling-freq-label-wrapper label{
+.meat-label-wrapper label, .qty-label-wrapper label, .freq-label-wrapper label, .carbs-label-wrapper label, .carbs-qty-label-wrapper label, .carbs-freq-label-wrapper label, .energy-src-label-wrapper label, .energy-qty-wrapper label, .energy-freq-wrapper label, .mode-label-wrapper label, .distance-label-wrapper label, .transport-freq-label-wrapper label, .recycling-meth-label-wrapper label, .recycling-qty-label-wrapper label, .recycling-freq-label-wrapper label, .eat-out-meal-label label, .eat-out-qty-label-wrapper label, .eat-out-freq-label-wrapper label{
     background-color: #334A51;
     font-size: 20px;
     border: 2px solid #000A16;
@@ -397,7 +485,7 @@ nav article:hover{
     transform: translate(-2%, -11%);
 }
 
-.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div, .recycling-meth-label-wrapper div, .recycling-qty-label-wrapper div, .recycling-freq-label-wrapper div, .recycling-ret-next-section div{
+.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div, .recycling-meth-label-wrapper div, .recycling-qty-label-wrapper div, .recycling-freq-label-wrapper div, .recycling-ret-next-section div, .eat-in-meat-prev-wrapper div, .eat-out-meal-label div, .eat-out-qty-label-wrapper div, .eat-out-freq-label-wrapper div, .signup-login-article div{
     background-color: #000A16;
     position: relative;
     z-index: 0;
@@ -415,7 +503,7 @@ nav article:hover{
     width: 122.97px;
 }
 
-.qty-label-wrapper, .freq-label-wrapper, .carbs-qty-label-wrapper, .carbs-freq-label-wrapper, .energy-src-label-wrapper, .energy-qty-wrapper, .energy-freq-wrapper, .mode-label-wrapper, .transport-freq-label-wrapper, .distance-label-wrapper{
+.qty-label-wrapper, .freq-label-wrapper, .carbs-qty-label-wrapper, .carbs-freq-label-wrapper, .energy-src-label-wrapper, .energy-qty-wrapper, .energy-freq-wrapper, .mode-label-wrapper, .transport-freq-label-wrapper, .distance-label-wrapper, .eat-out-meal-label, .eat-out-qty-label-wrapper, .eat-out-freq-label-wrapper{
     margin-bottom: 10px;
 }
 
@@ -426,17 +514,46 @@ nav article:hover{
     flex-direction: column;
 }
 
-.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input, .transport-cat-wrapper form input, .recycling-cat-wrapper input{
+.freq-wrapper input, .noOfMeats input, .carbs-wrapper .form-sect input, .energy-form-wrapper .energy-form-sect input, .transport-cat-wrapper form input, .recycling-cat-wrapper input, .eat-out-wrapper input{
     margin-right: 10px;
     border-radius: 7px;
     background-color: #F0FCFA;
 }
 
-.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder, .transport-cat-wrapper form input::placeholder, .recycling-cat-wrapper input::placeholder{
+.freq-wrapper input::placeholder, .noOfMeats input::placeholder, .carbs-wrapper .form-sect input::placeholder, .energy-form-wrapper .energy-form-sect input::placeholder, .transport-cat-wrapper form input::placeholder, .recycling-cat-wrapper input::placeholder, .eat-out-wrapper input::placeholder{
     color: #5E838E;
     text-align: center;
     /* font-size: 19px; */
     font-family: monospace;
+}
+
+.eat-in-ret-next-sect{
+    width: 17%;
+}
+
+.eat-in-meat-prev-wrapper div{
+    width: 73.99px;
+    height: 24px;
+}
+
+.eat-out-next-wrapper div{
+    height: 24px;
+    width: 98.74px;
+}
+
+.eat-out-meal-label div{
+    height: 28px;
+    width: 67.99px;
+}
+
+.eat-out-qty-label-wrapper div{
+    width: 122.97px;
+    height: 28px;
+}
+
+.eat-out-freq-label-wrapper div{
+    width: 133.97px;
+    height: 28px;
 }
 
 .carbs-next-btn, .ret-next-section button, .energy-ret-next-section button, .transport-ret-next-section button, .recycling-ret-next-section button, .transport-ret-next-section button{
@@ -493,7 +610,10 @@ nav article:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 30%;
+}
+
+article.ret-next-section.eat-out-ret-next-sect {
+    width: 25%;
 }
 
 .ret-next-section button, .recycling-ret-next-section button{
@@ -513,7 +633,7 @@ nav article:hover{
     width: auto;
 }
 
-.meat-prev-btn img, .food-cat-prev-btn img, .energy-cat-prev-btn img{
+.eat-in-prev-btn img, .food-cat-prev-btn img, .energy-cat-prev-btn img{
     margin-right: 3px;
 }
 
@@ -534,8 +654,8 @@ nav article:hover{
     border-radius: 7px;
 }
 
-.meat-prev-wrapper div{
-    width: 76.99px;
+.eat-in-prev-wrapper div{
+    width: 93.49px;
     height: 24px;
 }
 
@@ -991,7 +1111,7 @@ nav article:hover{
 }
 
 .lb-img-wrapper img{
-    height: 120px;
+    height: 180px;
     width: auto;
     background-color: #2C6575;
     border: 3px solid #000A16;
@@ -1044,7 +1164,50 @@ nav article:hover{
 }
 
 
+/* -------------------------HOMEPAGE.HTML-------------------- */
+.hp-main{
+    border-radius: 10px;
+    border: 3px solid #000A16;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    margin: 50px 50px 0 50px;
+    overflow: scroll;
+    width: 60%;
+    padding: 0px 30px 30px 30px;
+}
 
+.hp-main h1{
+    text-align: center;
+}
+
+.signup-login-article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.signup-login-article button{
+    font-size: 20px;
+    font-family: inherit;
+    border-radius: 7px;
+    position: absolute;
+    z-index: 1;
+    transform: translate(-4%, -13%);
+    background-color: #00A98B;
+    color: #E9FEF7;
+}
+
+.signup-login-article div{
+    position: relative;
+    z-index: 0;
+    height: 30px;
+    width: 70.99px;
+    background-color: #142219;
+}
 /* 
 tablette site
 .landing-main{
