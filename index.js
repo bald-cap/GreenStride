@@ -167,8 +167,8 @@ signupBtn.addEventListener('click', function(){
             }else if(response === 'password mismatch'){
                 alert('Your Passwords do not match');
             }else if(response === 'user already exists'){
-                alert('You already have an account. Log In instead');
                 window.location.href = 'index.html';
+                alert('You already have an account. Log In instead');
             }
         }
     })

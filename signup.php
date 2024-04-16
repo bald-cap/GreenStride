@@ -4,7 +4,8 @@
     $email = $_POST['newEmail'];
     $username = $POST['newUsername'];
     $password = $_POST['newPassword'];
-    $confPassword = $_POST['confPassword'];
+    $passhashed = password_hash($password, PASSWORD_DEFAULT);
+    $confPassword = $_POST['newConfPassword'];
 
     $connection = mysqli_connect(ID, PASSWORD, DB, SERVER);
 
@@ -16,7 +17,7 @@
             FROM USERS
             WHERE NAME = ?;"
         );
-        $verfUserExist->bind_param('ss', $username, $password);
+        $verfUserExist->bind_param('s', $username);
         $verfUserExist->execute();
         $userExist = $verfUserExist->get_result();
 
@@ -27,7 +28,7 @@
                 "INSERT INTO USERS (EMAIL, USERNAME, PASSWORD)
                 VALUES (?, ?, ?);"
             );
-            $signup->bind_param('sss', $email, $username, $password);
+            $signup->bind_param('sss', $email, $username, $passhashed);
             $signup->execute();
 
             if($signup->affected_rows > 0){

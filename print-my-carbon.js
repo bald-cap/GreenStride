@@ -417,6 +417,7 @@ submitResBtn.addEventListener('mouseleave', function(){
     submitResLab.style.backgroundColor = '#96AFB8';
 })
 
+const meatFreqWrap = document.querySelector(".meat-freq-wrapper")
 submitResBtn.addEventListener('click', function(){
     submitResLab.style.transform = 'translate(0%, 0%)';
     submitResLab.style.transition = '0s'
@@ -424,4 +425,40 @@ submitResBtn.addEventListener('click', function(){
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
+
+    $.ajax({
+        type: 'POST',
+        url : 'print-my-carbon.php',
+        data: {
+            //FOOD CATEGORY
+                //EATING HOME
+                    // MEAT
+            meatType : appendContent(meatFormWrap.querySelectorAll(".meat-type .pmc-main-p-selected")),
+            meatQty : meatFormWrap.querySelector('.meat-qty').value,
+            meatFreqNo : meatFreqWrap.querySelector('input').value,
+            meatFreqComp : meatFreqWrap.querySelector('.pmc-main-p-selected').textContent,
+
+                    //CARBS
+            carbsType : appendContent(carbsForm.querySelectorAll('.pmc-main-p-selected')),
+            carbsQty : carbsForm.querySelector('.qtyCarbs').value,
+            carbsFreq : carbsForm.querySelector('.carbs-freq').value,
+            carbsFreqComp : carbsForm.querySelector('.freq-opt .pmc-main-p-selected').textContent,
+
+                //EATING OUT
+            plates : appendContent(eatoutWrapper.querySelectorAll('.eat-out-opt-wrapper .pmc-main-p-selected')),
+            eatoutQty : eatoutWrapper.querySelector('.noPlates').value,
+            eatoutFreq : eatoutWrapper.querySelector('.eat-out-freq-wrapper input').value,
+            eatoutFreqComp :eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected').textContent,
+
+            //ENERGY CATEGORY
+        },
+    })
 })
+
+function appendContent(tag){
+    let list = []
+    for(i = 0; i < tag.length; i++){
+        list.push(tag[i].textContent)
+    }
+    return list
+}
