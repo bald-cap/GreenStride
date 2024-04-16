@@ -22,4 +22,8 @@ startBtn.addEventListener('click', function(){
     setTimeout(function(){
         startLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
+
+    setTimeout(function(){
+        startLab.style.transform = 'translate(-2%, -13%)';
+    }, 270)
 })

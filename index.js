@@ -39,7 +39,7 @@ const signBtnMain = document.querySelector(".landing-btns .signup-article")
 const signLabMain = document.querySelector(".signup-article button")
 const signDivMain = document.querySelector(".signup-article div")
 
-const signWrapper = document.querySelector(".signup-wrapper")
+const signupWrapper = document.querySelector(".signup-wrapper")
 
 signBtnMain.addEventListener('mouseenter', function(){
     signBtnMain.style.cursor = 'pointer';
@@ -64,7 +64,7 @@ signBtnMain.addEventListener('click', function(){
     setTimeout(function(){
         landingWrapper.style.display = 'none';
         retBtn.style.display = 'flex';
-        signWrapper.style.display = 'flex';
+        signupWrapper.style.display = 'flex';
 
         signLabMain.style.transform = 'translate(-4%, -13%)'
     }, 270)
@@ -72,12 +72,13 @@ signBtnMain.addEventListener('click', function(){
 
 retBtn.addEventListener('click', function(){
     retBtn.style.display = 'none';
-    signWrapper.style.display = 'none';
+    signupWrapper.style.display = 'none';
     loginWrapper.style.display = 'none';
 
     landingWrapper.style.display = 'block';
 })
 
+const loginFormWrap = document.querySelector(".login-form-wrapper")
 const loginBtn = document.querySelector(".login-btn")
 const loginLab = document.querySelector(".login-btn button")
 const loginDiv = document.querySelector(".login-btn div")
@@ -105,6 +106,22 @@ loginBtn.addEventListener('click', function(){
     setTimeout(function(){
         loginLab.style.transform = 'translate(-3.5%, -10%)'
     }, 270)
+
+    $.ajax({
+        type: 'POST',
+        url : 'login.php',
+        data : {
+            username : loginFormWrap.querySelector(".username-input"),
+            password : loginFormWrap.querySelector(".password-input")
+        },
+        succes : function(response){
+            if(response == 'success'){
+                window.location.href = 'homepage.html'
+            }else{
+                alert('login Info Is Wrong. Try again!')
+            }  
+        }
+    })
 })
 
 const signupBtn = document.querySelector(".signup-wrapper .signup-article")
@@ -134,4 +151,25 @@ signupBtn.addEventListener('click', function(){
     setTimeout(function(){
         signupLab.style.transform = 'translate(-3.5%, -10%)'
     }, 270)
+
+    $.ajax({
+        type : 'POST',
+        url : 'signup.php',
+        date : {
+            newEmail : signupWrapper.querySelector(".new-email"),
+            newUsername : signupWrapper.querySelector(".new-username"),
+            newPassword : signupWrapper.querySelector(".new-password"),
+            newConfPassword : signupWrapper.querySelector(".new-conf-password")
+        },
+        success : function(response){
+            if (response === 'success'){
+                window.location.href ='homepage.html';
+            }else if(response === 'password mismatch'){
+                alert('Your Passwords do not match');
+            }else if(response === 'user already exists'){
+                alert('You already have an account. Log In instead');
+                window.location.href = 'index.html';
+            }
+        }
+    })
 })
