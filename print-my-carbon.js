@@ -452,6 +452,13 @@ submitResBtn.addEventListener('click', function(){
 
             //ENERGY CATEGORY
         },
+        sucess: function(response){
+            if (response === "success"){
+                window.location.href = "profile.html";
+            }else if (response === "fail"){
+                alert("Some forms weren't selected!")
+            }
+        }
     })
 })
 
