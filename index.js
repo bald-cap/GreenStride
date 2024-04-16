@@ -111,8 +111,8 @@ loginBtn.addEventListener('click', function(){
         type: 'POST',
         url : 'login.php',
         data : {
-            username : loginFormWrap.querySelector(".username-input"),
-            password : loginFormWrap.querySelector(".password-input")
+            username : loginFormWrap.querySelector(".username-input").value,
+            password : loginFormWrap.querySelector(".password-input").value
         },
         succes : function(response){
             if(response == 'success'){
@@ -156,10 +156,10 @@ signupBtn.addEventListener('click', function(){
         type : 'POST',
         url : 'signup.php',
         date : {
-            newEmail : signupWrapper.querySelector(".new-email"),
-            newUsername : signupWrapper.querySelector(".new-username"),
-            newPassword : signupWrapper.querySelector(".new-password"),
-            newConfPassword : signupWrapper.querySelector(".new-conf-password")
+            newEmail : signupWrapper.querySelector(".new-email").value,
+            newUsername : signupWrapper.querySelector(".new-username").value,
+            newPassword : signupWrapper.querySelector(".new-password").value,
+            newConfPassword : signupWrapper.querySelector(".new-conf-password").value
         },
         success : function(response){
             if (response === 'success'){
