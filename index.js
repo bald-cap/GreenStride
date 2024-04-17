@@ -108,7 +108,7 @@ loginBtn.addEventListener('click', function(){
     }, 270)
 
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url : 'login.php',
         data : {
             username : loginFormWrap.querySelector(".username-input").value,
@@ -120,6 +120,8 @@ loginBtn.addEventListener('click', function(){
             }else{
                 alert('login Info Is Wrong. Try again!')
             }  
+            console.log(response)
+            console.log('login')
         }
     })
 })

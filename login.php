@@ -1,28 +1,35 @@
 <?php
 
     require 'connect-db.php';
+    
+    $username = $_GET['username'];
+    $password = $_GET['password'];
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $passhashed = password_hash($password, PASSWORD_DEFAULT);
-
-    $connection = mysqli_connect(ID, PASSWORD, DB, SERVER);
+    $connection = mysqli_connect(SERVER, ID, PASSWORD, DB);
 
     if($connection){
-        $loginVerf = $connection->prepare(
-            "SELECT USERNAME, PASSWORD
-            FROM USERS
-            WHERE USERNAME = ? AND PASSWORD = ?;"
+        $query = mysqli_prepare(
+            $connection,
+            "SELECT PASSWORD FROM USERS WHERE USERNAME = ?"
         );
-        $loginVerf->bind_param('ss', $username, $passhashed);
-        $loginVerf->execute();
-        $logins = $loginVerf->get_result();
+        mysqli_stmt_bind_param($query, 's', $username);
+        mysqli_stmt_execute($query);
+        $result = mysqli_stmt_get_result($query);
 
-        if($loginVerf->execute()){
-            if($logins->num_rows > 0){
-                echo "success";
-            }else{
-                echo "not recognised";
+        if($row = mysqli_fetch_assoc($result)){
+            if (password_verify($password, $row['PASSWORD'])){
+                echo "success" ;
+            } else{
+                echo "Invalid username or password". mysqli_error($connection);
+                exit;
             }
+        }else {
+            echo "Couldn't find your account";
         }
+
     }
+    mysqli_close($connection);
+
+
+    // $method = $_SERVER['REQUEST_METHOD'];
+    // print_r($method);

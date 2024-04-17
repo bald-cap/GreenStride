@@ -1,39 +1,42 @@
 <?php
     require('connect-db.php');
 
-    $email = $_POST['newEmail'];
-    $username = $POST['newUsername'];
-    $password = $_POST['newPassword'];
+    $email = $_GET['newEmail'];
+    $username = $_GET['newUsername'];
+    $password = $_GET['newPassword'];
     $passhashed = password_hash($password, PASSWORD_DEFAULT);
-    $confPassword = $_POST['newConfPassword'];
-
-    $connection = mysqli_connect(ID, PASSWORD, DB, SERVER);
-
-    if($confPassword != $password){
-        echo "password mismatch";
-    }elseif($connection){
-        $verfUserExist = $connection->prepare(
-            "SELECT USERNAME
-            FROM USERS
-            WHERE NAME = ?;"
-        );
-        $verfUserExist->bind_param('s', $username);
-        $verfUserExist->execute();
-        $userExist = $verfUserExist->get_result();
-
-        if ($verfUserExist->execute() and $userExist->num_rows > 0){
-            echo "user already exists";
-        }else{
-            $signup = $connection->prepare(
-                "INSERT INTO USERS (EMAIL, USERNAME, PASSWORD)
-                VALUES (?, ?, ?);"
-            );
-            $signup->bind_param('sss', $email, $username, $passhashed);
-            $signup->execute();
-
-            if($signup->affected_rows > 0){
-                echo "success";
-            }
-        }
-        
+    $confPassword = $_GET['newConfPassword'];
+    
+    $connection = mysqli_connect(SERVER, ID, PASSWORD, DB);
+    
+    if ($connection === false) {
+        echo "Database connection failed: " . mysqli_connect_error();
+        exit;
     }
+    
+    if ($confPassword != $password) {
+        echo "password mismatch";
+        exit;
+    }
+    
+    $query = mysqli_prepare($connection, "SELECT USERNAME FROM USERS WHERE USERNAME = ?");
+    mysqli_stmt_bind_param($query, 's', $username);
+    mysqli_stmt_execute($query);
+    $response = mysqli_stmt_get_result($query);
+    
+    if (mysqli_fetch_assoc($response)) {
+        echo "user already exists";
+    } else {
+        
+        $queryIn = mysqli_prepare($connection, "INSERT INTO USERS (EMAIL, USERNAME, PASSWORD) VALUES (?, ?, ?)");
+        mysqli_stmt_bind_param($queryIn, 'sss', $email, $username, $passhashed);
+        mysqli_stmt_execute($queryIn);
+    
+        if (mysqli_stmt_affected_rows($queryIn) > 0) {
+            echo "success";
+        } else {
+            echo "Registration failed: " . mysqli_error($connection);
+        }
+    }
+    
+    mysqli_close($connection);
