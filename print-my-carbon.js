@@ -378,23 +378,26 @@ transPrevBtn.addEventListener('click', function(){
 })
 
 const allOptsPtag = document.querySelectorAll(".pmc-main p")
-allOptsPtag.forEach(function(opt){
+allOptsPtag.forEach(function(opt, pos, all){
     opt.addEventListener('click', function(){
         console.log(opt.classList)
-        if (opt.className === ''){
+        if (opt.className === '' || opt.className === 'public-trans-opt' || opt.className === 'metal-opt'){
             opt.className = 'pmc-main-p-selected';
-            console.log(opt.classList)
+            all.forEach(function(optDe, posDe){
+                if (optDe.parentElement.classList === opt.parentElement.classList && opt.parentElement.classList.contains('freq-opt-js') && optDe != opt){
+                    optDe.className = ''
+                }
+            })
+            console.log(pos)
         }else if(opt.className === 'pmc-main-p-selected'){
             if(opt.textContent === 'Public Transport'){
                 opt.className = 'public-trans-opt'
+            }else if (opt.textContent === "Metals"){
+                opt.className = 'metal-opt'
             }else{
                 opt.className = ''
                 console.log(opt.classList)
             }
-        }else if(opt.className === 'public-trans-opt'){
-            console.log(opt.classList)
-            opt.className = 'pmc-main-p-selected'
-            // opt.style.padding= '1px 13px;'
         }
     })
 })
@@ -451,6 +454,19 @@ submitResBtn.addEventListener('click', function(){
             eatoutFreqComp :eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected').textContent,
 
             //ENERGY CATEGORY
+            egySrc : appendContent(egyWrapper.querySelectorAll('.energy-src-wrapper .pmc-main-p-selected')),
+            egyCons : egyWrapper.querySelector('.egy-qty').value,
+            egyFreq : egyWrapper.querySelector('.egy-freq-qty').value,
+            egyFreqComp : egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent,
+
+            //TRANSPORT CATEGORY
+            transMode : appendContent(transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')),
+            transDis : transWrapper.querySelector('.transport-distance').value,
+            transFreq : transWrapper.querySelector('.trans-freq').value,
+            transFreqComp : transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent,
+
+            //RECYCLING CATEGORY
+            
         },
         sucess: function(response){
             if (response === "success"){
