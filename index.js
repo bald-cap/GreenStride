@@ -155,7 +155,7 @@ signupBtn.addEventListener('click', function(){
     }, 270)
 
     $.ajax({
-        type : 'POST',
+        type : 'GET',
         url : 'signup.php',
         date : {
             newEmail : signupWrapper.querySelector(".new-email").value,
