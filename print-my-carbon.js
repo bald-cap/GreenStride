@@ -430,7 +430,7 @@ submitResBtn.addEventListener('click', function(){
     }, 270)
 
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url : 'print-my-carbon.php',
         data: {
             //FOOD CATEGORY
