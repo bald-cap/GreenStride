@@ -428,60 +428,12 @@ submitResBtn.addEventListener('click', function(){
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
-
-    $.ajax({
-        type: 'GET',
-        url : 'print-my-carbon.php',
-        data: {
-            //FOOD CATEGORY
-                //EATING HOME
-                    // MEAT
-            meatType : appendContent(meatFormWrap.querySelectorAll(".meat-type .pmc-main-p-selected")),
-            meatQty : meatFormWrap.querySelector('.meat-qty').value,
-            meatFreqNo : meatFreqWrap.querySelector('input').value,
-            meatFreqComp : meatFreqWrap.querySelector('.pmc-main-p-selected').textContent,
-
-                    //CARBS
-            carbsType : appendContent(carbsForm.querySelectorAll('.pmc-main-p-selected')),
-            carbsQty : carbsForm.querySelector('.qtyCarbs').value,
-            carbsFreq : carbsForm.querySelector('.carbs-freq').value,
-            carbsFreqComp : carbsForm.querySelector('.freq-opt .pmc-main-p-selected').textContent,
-
-                //EATING OUT
-            plates : appendContent(eatoutWrapper.querySelectorAll('.eat-out-opt-wrapper .pmc-main-p-selected')),
-            eatoutQty : eatoutWrapper.querySelector('.noPlates').value,
-            eatoutFreq : eatoutWrapper.querySelector('.eat-out-freq-wrapper input').value,
-            eatoutFreqComp :eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected').textContent,
-
-            //ENERGY CATEGORY
-            egySrc : appendContent(egyWrapper.querySelectorAll('.energy-src-wrapper .pmc-main-p-selected')),
-            egyCons : egyWrapper.querySelector('.egy-qty').value,
-            egyFreq : egyWrapper.querySelector('.egy-freq-qty').value,
-            egyFreqComp : egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent,
-
-            //TRANSPORT CATEGORY
-            transMode : appendContent(transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')),
-            transDis : transWrapper.querySelector('.transport-distance').value,
-            transFreq : transWrapper.querySelector('.trans-freq').value,
-            transFreqComp : transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent,
-
-            //RECYCLING CATEGORY
-            
-        },
-        sucess: function(response){
-            if (response === "success"){
-                window.location.href = "profile.html";
-            }else if (response === "fail"){
-                alert("Some forms weren't selected!")
-            }
-        }
-    })
 })
 
-function appendContent(tag){
-    let list = []
-    for(i = 0; i < tag.length; i++){
-        list.push(tag[i].textContent)
-    }
-    return list
-}
+// function appendContent(tag){
+//     let list = []
+//     for(i = 0; i < tag.length; i++){
+//         list.push(tag[i].textContent)
+//     }
+//     return list
+// }

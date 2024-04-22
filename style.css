@@ -123,16 +123,6 @@ nav article:hover{
     font-size: 15px;
 }
 
-.sign-out-btn{
-    background-color: #000A16;
-    border: 2px solid #3D4856;
-}
-
-.sign-out-btn:hover{
-    background-color: #7f2c00e0;
-    cursor: pointer;
-    border: 2px solid #000A16;
-}
 
 .return-btn-wrapper{
     background-color: #2F3640;
@@ -164,12 +154,12 @@ nav article:hover{
     justify-content: space-evenly;
 }
 
-.landing-btns .login-article, .landing-btns .signup-article, .signup-login-article{
+.landing-btns .login-article, .signup-login-article{
     display: flex;
 }
 
 /* shared */
-.landing-btns .login-article button, .landing-btns .signup-article button{
+.landing-btns .login-article button{
     font-family: inherit;
     font-size: inherit;
     position: absolute;
@@ -181,12 +171,12 @@ nav article:hover{
     width: auto;
 }
 
-.landing-btns .signup-article button, .landing-btns .login-article button{
+.landing-btns .login-article button{
     transform: translate(-4%, -13%)
 }
 
 
-.landing-btns .login-article div, .landing-btns .signup-article div{
+.landing-btns .login-article div{
     background-color: #334A51;
     height: 66.77px;
     position: relative;
@@ -197,9 +187,6 @@ nav article:hover{
     width: 222.95px;
 }
 
-.landing-btns .signup-article div{
-    width: 250.44px;
-}
 
 
 /* ---------------------LOGIN SCREEN------------------- */
@@ -279,7 +266,7 @@ nav article:hover{
     font-family: inherit;
 }
 
-.login-btn button a, .signup-wrapper .signup-article button a{
+.login-btn button a{
     color: #000A16;
     text-decoration: none;
 }
@@ -292,71 +279,6 @@ nav article:hover{
     z-index: 0;
     border-radius: 10px;
 }
-
-
-/* ------------------------SIGN UP SCREEN---------------------*/
-.signup-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.signup-wrapper form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.signup-wrapper form .label-wrapper{
-    margin-top: 50px;
-}
-
-.signup-wrapper form .email-label-wrapper div{
-    width: 217.29px ;
-}
-
-.signup-wrapper form input{
-    margin-top: 10px;
-    height: 30px;
-    width: 300px;
-    border-radius: 8px;
-    background-color: #F0FCFA;
-}
-
-.signup-wrapper form input::placeholder{
-    color: #5E838E;
-    text-align: center;
-    font-size: 19px;
-    font-family: monospace;
-}
-
-.signup-wrapper .signup-article{
-    margin-top: 40px;
-}
-
-.signup-wrapper .signup-article button{
-    font-size: 40px;
-    position: absolute;
-    z-index: 1;
-    border-radius: 10px;
-    border: 4px solid #000A16;
-    padding: 1px 20px;
-    background-color: #F0FCFA;
-    width: auto;
-    font-family: inherit;
-    transform: translate(-3%, -10%);
-}
-
-.signup-wrapper .signup-article div{
-    background-color: #334A51;
-    height: 56.67px;
-    width: 201.95px;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
 
 /* ------------------------PRINT-MY-CARBON.HTML PAGE---------------------- */
 /* ------------------FOOD CATEGORY--------------------- */
@@ -485,7 +407,7 @@ nav article:hover{
     transform: translate(-2%, -11%);
 }
 
-.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div, .recycling-meth-label-wrapper div, .recycling-qty-label-wrapper div, .recycling-freq-label-wrapper div, .recycling-ret-next-section div, .eat-in-meat-prev-wrapper div, .eat-out-meal-label div, .eat-out-qty-label-wrapper div, .eat-out-freq-label-wrapper div, .signup-login-article div{
+.meat-label-wrapper div, .qty-label-wrapper div, .freq-label-wrapper div, .carbs-label-wrapper div, .carbs-qty-label-wrapper div, .carbs-freq-label-wrapper div, .energy-src-label-wrapper div, .energy-qty-wrapper div, .energy-freq-wrapper div, .energy-ret-next-section div, .mode-label-wrapper div, .distance-label-wrapper div, .transport-freq-label-wrapper div, .transport-ret-next-section div, .recycling-meth-label-wrapper div, .recycling-qty-label-wrapper div, .recycling-freq-label-wrapper div, .recycling-ret-next-section div, .eat-in-meat-prev-wrapper div, .eat-out-meal-label div, .eat-out-qty-label-wrapper div, .eat-out-freq-label-wrapper div{
     background-color: #000A16;
     position: relative;
     z-index: 0;
