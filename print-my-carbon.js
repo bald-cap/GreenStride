@@ -430,10 +430,3 @@ submitResBtn.addEventListener('click', function(){
     }, 270)
 })
 
-// function appendContent(tag){
-//     let list = []
-//     for(i = 0; i < tag.length; i++){
-//         list.push(tag[i].textContent)
-//     }
-//     return list
-// }

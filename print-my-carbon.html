@@ -33,14 +33,14 @@
 
     <main class="pmc-main">
         <section class="food-cat-wrapper">
-            <article class="food-cat-facecard">
-                <article class="facecard-container">
+            <article class="food-cat-facecard wrapper">
+                <article class="facecard-container foreground">
                     <h2>Food Category</h2>
                     <article class="food-img-wrapper">
                         <img src="diet.png" alt="Food Icon">
                     </article>
                 </article>
-                <div></div>
+                <div class="background"></div>
             </article> 
 
             <article class="eat-in-label-wrapper">
@@ -50,9 +50,9 @@
 
             <form action="cats.php" class="meat-wrapper eat-in-meat">
                 <article class="form-sect left-sect">
-                    <article class="meat-label-wrapper">
-                        <label>Meat Type:</label>
-                        <div></div>
+                    <article class="meat-label-wrapper wrapper">
+                        <label class="foreground">Meat Type:</label>
+                        <div class="background"></div>
                     </article>
     
                     <article class="meat-type">
@@ -74,9 +74,9 @@
                 
                 
                 <article class="form-sect">
-                    <article class="freq-label-wrapper">
-                        <label>Frequency:</label>
-                        <div></div>
+                    <article class="freq-label-wrapper wrapper">
+                        <label class="foreground">Frequency:</label>
+                        <div class="background"></div>
                     </article>
     
                     <article class="freq-wrapper meat-freq-wrapper">
@@ -92,16 +92,16 @@
                 </article>
             </form>
 
-            <article class="carbs-next-wrapper eat-in-carbs">
-                <button class="carbs-next-btn" type="button">Carbs <img src="next.png" alt=""></button>
-                <div></div>
+            <article class="carbs-next-wrapper eat-in-carbs wrapper">
+                <button class="carbs-next-btn foreground" type="button">Carbs <img src="next.png" alt=""></button>
+                <div class="background"></div>
             </article>
 
             <form action="cats.php" class="carbs-wrapper" style="display: none;">
                 <article class="form-sect left-sect">
-                    <article class="carbs-label-wrapper">
-                        <label>Carbohydrates:</label>
-                        <div></div>
+                    <article class="carbs-label-wrapper wrapper">
+                        <label class="foreground">Carbohydrates:</label>
+                        <div class="background"></div>
                     </article>
 
                     <article class="carb-article"> 
@@ -110,9 +110,9 @@
                         <p>Fish</p>
                     </article>
         
-                    <article class="carbs-qty-label-wrapper">
-                        <label>Quantity:</label>
-                        <div></div>
+                    <article class="carbs-qty-label-wrapper wrapper">
+                        <label class="foreground">Quantity:</label>
+                        <div class="background"></div>
                     </article>
 
                     <article>
@@ -122,9 +122,9 @@
                 </article>
     
                 <article class="form-sect">
-                    <article class="carbs-freq-label-wrapper">
-                        <label>Frequency:</label>
-                        <div></div>
+                    <article class="carbs-freq-label-wrapper wrapper">
+                        <label class="foreground">Frequency:</label>
+                        <div class="background"></div>
                     </article>
 
                     <input type="number" class="carbs-freq" name="freq-num" placeholder="How often?">
@@ -139,29 +139,29 @@
             </form>
 
             <article class="ret-next-section eat-in-ret-next-sect" style="display: none;">
-                <article class="eat-in-meat-prev-wrapper">
-                    <button class="eat-in-meat-prev-btn" type="button"><img src="prev.png" alt="">Meat</button>
-                    <div></div>
+                <article class="eat-in-meat-prev-wrapper wrapper">
+                    <button class="eat-in-meat-prev-btn foreground" type="button"><img src="prev.png" alt="">Meat</button>
+                    <div class="background"></div>
                 </article>
 
-                <article class="eat-out-next-wrapper">
-                    <button class="eat-out-next-btn" type="button">Eat Out <img src="next.png" alt=""></button>
-                    <div></div>
+                <article class="eat-out-next-wrapper wrapper">
+                    <button class="eat-out-next-btn foreground" type="button">Eat Out <img src="next.png" alt=""></button>
+                    <div class="background"></div>
                 </article>
             </article>
 
-            <article class="eat-out-label-wrapper" style="display: none;">
-                <h3>Eating Out</h3>
-                <div></div>
+            <article class="eat-out-label-wrapper wrapper" style="display: none;">
+                <h3 class="foreground">Eating Out</h3>
+                <div class="background"></div>
             </article>
 
             <form action="" class="eat-out-wrapper" style="display: none;">
 
                 <article class="eat-out-form-sect left-sect">
                     <article class="eat-out-meal">
-                        <article class="eat-out-meal-label">
-                            <label>Meal</label>
-                            <div></div>
+                        <article class="eat-out-meal-label wrapper">
+                            <label class="foreground">Meal</label>
+                            <div class="background"></div>
                         </article>
     
                         <article class="eat-out-opt-wrapper">
@@ -173,9 +173,9 @@
                     </article>
     
                     <article class="eat-out-qty-wrapper">
-                        <article class="eat-out-qty-label-wrapper">
-                            <label>Quantity:</label>
-                            <div></div>
+                        <article class="eat-out-qty-label-wrapper wrapper">
+                            <label class="foreground">Quantity:</label>
+                            <div class="background"></div>
                         </article>
     
                         <article >
@@ -186,9 +186,9 @@
                 </article>
 
                 <article class="eat-out-form-sect eat-out-qty-freq right-sect">
-                    <article class="eat-out-freq-label-wrapper">
-                        <label>Frequency:</label>
-                        <div></div>
+                    <article class="eat-out-freq-label-wrapper wrapper">
+                        <label class="foreground">Frequency:</label>
+                        <div class="background"></div>
                     </article>
     
                     <article class="eat-out-freq-wrapper">
@@ -205,27 +205,27 @@
             </form>
 
             <article class="ret-next-section eat-out-ret-next-sect" style="display: none;">
-                <article class="eat-in-prev-wrapper">
-                    <button class="eat-in-prev-btn" type="button"><img src="prev.png" alt=""> Eat In</button>
-                    <div></div>
+                <article class="eat-in-prev-wrapper wrapper">
+                    <button class="eat-in-prev-btn foreground" type="button"><img src="prev.png" alt=""> Eat In</button>
+                    <div class="background"></div>
                 </article>
 
-                <article class="energy-next-wrapper">
-                    <button class="energy-next-btn" type="button">Energy Category<img src="next.png" alt=""></button>
-                    <div></div>
+                <article class="energy-next-wrapper wrapper">
+                    <button class="energy-next-btn foreground" type="button">Energy Category<img src="next.png" alt=""></button>
+                    <div class="background"></div>
                 </article>
             </article>
         </section> 
 
         <section class="energy-cat-wrapper" style="display: none;">
-            <article class="energy-cat-facecard">
-                <article class="energy-facecard-container">
+            <article class="energy-cat-facecard wrapper">
+                <article class="energy-facecard-container foreground">
                     <h2>Energy Category</h2>
                     <article class="energy-img-wrapper">
                         <img src="renewable-energy.png" alt="Food Icon">
                     </article>
                 </article>
-                <div></div>
+                <div class="background"></div>
             </article>  
 
             <form action="cats.php" class="energy-form-wrapper">
