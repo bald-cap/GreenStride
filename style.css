@@ -5,7 +5,11 @@ html, body{
 }
 
 section{
-    width: 100%;
+    width: 600px;
+}
+
+form{
+    width: 80%;
 }
 
 body, .landing-btns, .landing-main{
@@ -203,6 +207,7 @@ nav article:hover{
 
 .login-wrapper, .login-form-wrapper form{
     flex-direction: column;
+    width: 100%;
 }
 
 .login-form-wrapper input{
@@ -454,7 +459,7 @@ nav article:hover{
 }
 
 .eat-in-ret-next-sect{
-    width: 17%;
+    width: 30%;
 }
 
 .eat-in-meat-prev-wrapper div{
@@ -539,7 +544,7 @@ nav article:hover{
 }
 
 article.ret-next-section.eat-out-ret-next-sect {
-    width: 25%;
+    width: 45%;
 }
 
 .ret-next-section button, .recycling-ret-next-section button{
@@ -670,7 +675,7 @@ article.ret-next-section.eat-out-ret-next-sect {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 40%;
+    width: 75%;
     margin-top: 30px;
 }
 
@@ -760,7 +765,6 @@ article.ret-next-section.eat-out-ret-next-sect {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 55%;
 }
 
 .transport-cat-wrapper form .right-sect{
@@ -898,9 +902,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 }
 
 .recycling-cat-wrapper form{
-    width: 50%;
     justify-content: space-around;
-    height: 35%;
 }
 
 .recycling-cat-wrapper form .recycling-right-sect{
@@ -910,6 +912,10 @@ article.ret-next-section.eat-out-ret-next-sect {
     height: 100%;
 }
 
+.recyc-freq-wrapper{
+    margin-top: 20px;
+}
+
 .recycling-left-sect h3{
     width: fit-content;
 }
@@ -917,7 +923,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 .recycling-ret-next-section{
     margin-top: 10px;
     display: flex;
-    width: 30%;
+    width: 60%;
     justify-content: space-evenly;
 }
 
@@ -954,6 +960,7 @@ article.ret-next-section.eat-out-ret-next-sect {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .profile-main{
@@ -1056,6 +1063,7 @@ article.ret-next-section.eat-out-ret-next-sect {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .lb-img-wrapper img{
@@ -1080,6 +1088,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .leaberboard-main .lb-list-wrapper{
     display: flex;
+    width: 100%;
 }
 
 .leaberboard-main .lb-list-wrapper article{
@@ -1123,7 +1132,6 @@ article.ret-next-section.eat-out-ret-next-sect {
     /* text-align: center; */
     margin: 50px 50px 0 50px;
     overflow: scroll;
-    width: 60%;
     padding: 0px 30px 30px 30px;
 }
 
@@ -1180,36 +1188,15 @@ article.ret-next-section.eat-out-ret-next-sect {
     }
 
     .ret-next-section{
-        width: 55%;
+        width: 35%;
     }
     
-
-    article.ret-next-section.eat-out-ret-next-sect{
-        width: 37%;
-    }
-
-    .energy-ret-next-section{
-        width: 52%;
-    }
-
-    .transport-ret-next-section{
-        width: 60%;
-    }
-
     .mode-label-wrapper{
         width: 100%
     }
 
-    .recycling-cat-wrapper form{
-        width: 60%;
-    }
-
     .recycling-freq-label-wrapper{
         margin-top: 20px;
-    }
-
-    .recycling-ret-next-section{
-        width: 47%;
     }
 
     /* -----------------lEADERBOARD------------- */
@@ -1224,7 +1211,54 @@ article.ret-next-section.eat-out-ret-next-sect {
   }
   
   @media (max-width: 767px) {
+
+    h1{
+        font-size: 40px;
+    }
+
+    nav{
+        flex-wrap: wrap;
+    }
+
+    nav article{
+        margin-top: 7px;
+    }
+
+    .landing-main{
+        margin-top: 25%;
+    }
+
+    .landing-btns .login-article button{
+        font-size: 40px;
+    }
+
+    .landing-btns .login-article div{
+        width: 190px;
+        height: 54.6667px;
+    }
+
+    .hp-main{
+        width: 70%;
+        flex-wrap: wrap; 
+    }
+
+    .hp-main section{
+        width: 100%;
+    }
+
+    .hp-main h1{
+        font-size: 40px;
+    }
+
+    .profile-main{
+        width: 85%;
+    }
+
+    .leaberboard-main{
+        width: 80%;
+    }
   }
+
   
 
 
