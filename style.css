@@ -795,7 +795,7 @@ article.ret-next-section.eat-out-ret-next-sect {
     align-items: center;
 }
 
-.modes-opt-wrapper h3, .public-trans-opt, .recycling-left-sect h3, .metal-opt{
+.modes-opt-wrapper h3, .public-trans-opt, .recycling-left-sect h3{
     background-color: #43655A;
     padding: 1px 15px;
     border-radius: 5px;
@@ -810,7 +810,7 @@ article.ret-next-section.eat-out-ret-next-sect {
     margin-top: 0px;
 }
 
-.public-trans-opt, .metal-opt{
+.public-trans-opt{
     font-size: 15.21px;
     font-weight: bold;
 }

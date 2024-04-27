@@ -390,9 +390,7 @@ allOptsPtag.forEach(function(opt, pos, all){
             })
             console.log(pos)
         }else if(opt.className === 'pmc-main-p-selected'){
-            if(opt.textContent === 'Public Transport'){
-                opt.className = 'public-trans-opt'
-            }else if (opt.textContent === "Metals"){
+            if (opt.textContent === "Metals"){
                 opt.className = 'metal-opt'
             }else{
                 opt.className = ''
@@ -427,6 +425,9 @@ submitResBtn.addEventListener('click', function(){
     let emitMeat;
     let emitCarb;
     let emitEatOut;
+    let emitEgy;
+    let emitTrans;
+    let emitRecyc;
 
     //FOOD CATEGORY
         //EATING HOME
@@ -467,26 +468,33 @@ submitResBtn.addEventListener('click', function(){
         emitEatOut = calculEatOutCO2(12)
     }
 
+    //ENERGY CATEGORY
+    emitEgy = calculEnergyCO2()
 
+    //TRANSPORT CATEGORY
+    let transFreq = transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent
+    if (transFreq === 'Every day'){
+        emitTrans = calculTransCO2(360)
+    }else if (transFreq === 'Every four days'){
+        emitTrans = calculTransCO2(91)
+    }else if (transFreq === 'Every week'){
+        emitTrans = calculTransCO2(52)
+    }else if (transFreq === 'Every month'){
+        emitTrans = calculTransCO2(12)
+    }
 
+    //RECYCLING CATEGORY
+    let recycFreq = recycWrapper.querySelector('.recycling-opt-wrapper .pmc-main-p-selected').textContent
+    if (recycFreq === 'Every week'){
+        emitRecyc = calculRecycCO2(52)
+    }else if(recycFreq === 'Every month'){
+        emitRecyc = calculRecycCO2(12)
+    }
 
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
 })
-
-
-//ENERGY CATEGORY
-let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected')
-let egyCons = egyWrapper.querySelector('.egy-qty').value
-let egyFreq = egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent
-
-//TRANSPORT CATEGORY
-let transMode = transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')
-let transDis = transWrapper.querySelector('.transport-distance').value
-let transFreq = transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent
-
-//RECYCLING CATEGORY
 
 
 
@@ -508,16 +516,15 @@ function calculMeatCO2(freq){
     let meatType = meatFormWrap.querySelector(".meat-type .pmc-main-p-selected").textContent
     let meatQty = meatFormWrap.querySelector('.meat-qty').value
 
+    let emit;
     if(meatType === 'Beef'){
-        let emit = queryAPI(beeflink)
-        result = emit * freq * 0.150 * meatQty
+        emit = queryAPI(beeflink)
     }else if(meatType === 'Pork'){
-        let emit = queryAPI(Porclink)
-        result = emit * freq * 0.150 * meatQty
+        emit = queryAPI(Porclink)
     }else if(meatType === 'Chicken'){
-        let emit = queryAPI(Chickenlink)
-        result = emit * freq * 0.150 * meatQty
+        emit = queryAPI(Chickenlink)
     }
+    result = emit * freq * 0.150 * meatQty
 
     return result
 }
@@ -527,35 +534,88 @@ function calculCarbsCO2(freq){
     let carbsType = carbsForm.querySelector('.pmc-main-p-selected').textContent
     let carbsQty = carbsForm.querySelector('.qtyCarbs').value
 
+    let emit;
     if(carbsType === 'Rice'){
-        let emit = queryAPI(Ricelink)
-        result = emit * freq * carbsQty
+        emit = queryAPI(Ricelink)
     }else if(carbsType === 'Potato'){
-        let emit = queryAPI(Potatolink)
-        result = emit * freq * carbsQty
+        emit = queryAPI(Potatolink)
     }
+    result = emit * freq * carbsQty
+
 
     return result
 }
 
 function calculEatOutCO2(freq){
     let result;
-    let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected')
+    let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected').textContent
     let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
 
+    let emit;
     if(plates === 'Beef Rice'){
-        let emit = queryAPI(BeefRicelink)
-        result = emit * freq * 0.250 * eatoutQty
+        emit = queryAPI(BeefRicelink)
     }else if(plates === 'Chicken Rice'){
-        let emit = queryAPI(ChickenRicelink)
-        result = emit * freq * 0.250 * eatoutQty
+        emit = queryAPI(ChickenRicelink)
     }
+    result = emit * freq * 0.250 * eatoutQty
 
     return result
 }
 
 function calculEnergyCO2(){
+    let result;
+    let egyFreq = egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent
+    let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected').textContent
+    let egyCons = egyWrapper.querySelector('.egy-qty').value
 
+    let emit;
+    if(egySrc === 'Grid'){
+        emit = queryAPI(Gridlink)
+    }else if(egySrc === 'Solar'){
+        emit = queryAPI(Solarlink)
+    }else if (egySrc === 'Gas (for heating)'){
+        emit = queryAPI(Gaslink)
+    }else if (egySrc === 'LPG Gas (for Cooking)'){
+        emit = queryAPI(LPGGaslink)
+    }
+    result = emit * egyFreq * egyCons * 0.001
 
+    return result
+}
 
+function calculTransCO2(freq){
+    let result;
+    let transMode = transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')
+    let transRecharge = transWrapper.querySelector('.transport-recharge').value
+
+    let emit;
+    if(transMode.parentElement.className = 'electric-mode-opt'){
+        // In kiloWatts
+        emit = queryAPI(Electriclink)
+        result *= 0.001
+    }else if(transMode.parentElement.className === 'diesel-mode-opt'){
+        emit = queryAPI(Diesellink)
+    }
+    result = emit * freq * transRecharge
+
+    return result
+}
+
+function calculRecycCO2(freq){
+    let result;
+    let recycType = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected').textContent
+    let recycQty = transWrapper.querySelector('.qty-waste-input').value
+
+    let emit;
+    if(recycType = 'By Sorting'){
+        // In kiloWatts
+        emit = queryAPI(Sortinglink)
+    }else if(recycType = 'By Incineration'){
+        emit = queryAPI(Incinerationlink)
+    }else if(recycType = 'Without Sorting'){
+        emit = queryAPI(WithoutSortinglink)
+    }
+    result = emit * freq * recycQty
+
+    return result
 }
