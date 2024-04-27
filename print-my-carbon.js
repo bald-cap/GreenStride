@@ -384,7 +384,7 @@ allOptsPtag.forEach(function(opt, pos, all){
         if (opt.className === '' || opt.className === 'public-trans-opt' || opt.className === 'metal-opt'){
             opt.className = 'pmc-main-p-selected';
             all.forEach(function(optDe, posDe){
-                if (optDe.parentElement.classList === opt.parentElement.classList && opt.parentElement.classList.contains('freq-opt-js') && optDe != opt){
+                if (optDe.parentElement.classList === opt.parentElement.classList && optDe != opt){
                     optDe.className = ''
                 }
             })
@@ -424,9 +424,132 @@ const meatFreqWrap = document.querySelector(".meat-freq-wrapper")
 submitResBtn.addEventListener('click', function(){
     submitResLab.style.transform = 'translate(0%, 0%)';
     submitResLab.style.transition = '0s'
+    let emitMeat;
+    let emitCarb;
+    let emitEatOut;
+
+    //FOOD CATEGORY
+        //EATING HOME
+            // MEAT
+    let meatFreq = meatFreqWrap.querySelector('.pmc-main-p-selected').textContent
+    if (meatFreq === 'Every day'){
+        emitMeat = calculMeatCO2(360)
+    }else if (meatFreq === 'Every four days'){
+        emitMeat = calculMeatCO2(91)
+    }else if (meatFreq === 'Every week'){
+        emitMeat = calculMeatCO2(52)
+    }else if (meatFreq === 'Every month'){
+        emitMeat = calculMeatCO2(12)
+    }
+
+            //CARBS
+    let carbsFreq = carbsForm.querySelector('.freq-opt .pmc-main-p-selected').textContent
+    if (carbsFreq === 'Every day'){
+        emitCarb = calculCarbsCO2(360)
+    }else if (carbsFreq === 'Every four days'){
+        emitCarb = calculCarbsCO2(91)
+    }else if (carbsFreq === 'Every week'){
+        emitCarb = calculCarbsCO2(52)
+    }else if (carbsFreq === 'Every month'){
+        emitCarb = calculCarbsCO2(12)
+    }
+
+
+        //EATING OUT
+    let eatoutFreq = eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected').textContent
+    if (eatoutFreq === 'Every day'){
+        emitEatOut = calculEatOutCO2(360)
+    }else if (eatoutFreq === 'Every four days'){
+        emitEatOut = calculEatOutCO2(91)
+    }else if (eatoutFreq === 'Every week'){
+        emitEatOut = calculEatOutCO2(52)
+    }else if (eatoutFreq === 'Every month'){
+        emitEatOut = calculEatOutCO2(12)
+    }
+
+
+
 
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
 })
 
+
+//ENERGY CATEGORY
+let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected')
+let egyCons = egyWrapper.querySelector('.egy-qty').value
+let egyFreq = egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent
+
+//TRANSPORT CATEGORY
+let transMode = transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')
+let transDis = transWrapper.querySelector('.transport-distance').value
+let transFreq = transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent
+
+//RECYCLING CATEGORY
+
+
+
+// GENERAL REQUEST
+function queryAPI(link){
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', link)
+    xhr.onreadystatechange = function(){
+        if (xhr.status === 200 && xhr.readyState === 4){
+            let response = JSON.parse(xhr.responseText)
+            console.log(response)
+        }
+    }
+    xhr.send();
+}
+
+function calculMeatCO2(freq){
+    let result = 1;
+    let meatType = meatFormWrap.querySelector(".meat-type .pmc-main-p-selected").textContent
+    let meatQty = meatFormWrap.querySelector('.meat-qty').value
+
+    if(meatType === 'Beef'){
+        let emit = queryAPI(beeflink)
+        result = emit * freq * 0.150 * meatQty
+    }else if(meatType === 'Pork'){
+        let emit = queryAPI(Porclink)
+        result = emit * freq * 0.150 * meatQty
+    }else if(meatType === 'Chicken'){
+        let emit = queryAPI(Chickenlink)
+        result = emit * freq * 0.150 * meatQty
+    }
+
+    return result
+}
+
+function calculCarbsCO2(freq){
+    let result = 1;
+    let carbsType = carbsForm.querySelector('.pmc-main-p-selected').textContent
+    let carbsQty = carbsForm.querySelector('.qtyCarbs').value
+
+    if(carbsType === 'Rice'){
+        let emit = queryAPI(Ricelink)
+        result = emit * freq * carbsQty
+    }else if(carbsType === 'Potato'){
+        let emit = queryAPI(Potatolink)
+        result = emit * freq * carbsQty
+    }
+
+    return result
+}
+
+function calculEatOutCO2(freq){
+    let result;
+    let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected')
+    let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
+
+    if(plates === 'Beef Rice'){
+        let emit = queryAPI(BeefRicelink)
+        result = emit * freq * 0.250 * eatoutQty
+    }else if(plates === 'Chicken Rice'){
+        let emit = queryAPI(ChickenRicelink)
+        result = emit * freq * 0.250 * eatoutQty
+    }
+
+    return result
+}
