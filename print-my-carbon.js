@@ -553,3 +553,9 @@ function calculEatOutCO2(freq){
 
     return result
 }
+
+function calculEnergyCO2(){
+
+
+
+}
