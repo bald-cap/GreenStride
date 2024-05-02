@@ -422,13 +422,7 @@ const meatFreqWrap = document.querySelector(".meat-freq-wrapper")
 submitResBtn.addEventListener('click', function(){
     submitResLab.style.transform = 'translate(0%, 0%)';
     submitResLab.style.transition = '0s'
-    let emitMeat;
-    let emitCarb;
-    let emitEatOut;
-    let emitEgy;
-    let emitTrans;
-    let emitRecyc;
-
+  
     //FOOD CATEGORY
         //EATING HOME
             // MEAT
@@ -490,6 +484,25 @@ submitResBtn.addEventListener('click', function(){
     }else if(recycFreq === 'Every month'){
         emitRecyc = calculRecycCO2(12)
     }
+    // emission alimentaire 
+    let emitFood; 
+    emitFood = (emitMeat + emitCarb + emitEatOut)/3;
+
+    //emission moyenne (score Total Emission):
+    let emissionTot;
+    emissionTot= (emitMeat + emitCarb + emitEatOut+ emitRecyc + emitEgy + emitTrans)/6;
+    
+    // Utilisation du résultat
+    // Stocker les résultats calculés dans localStorage
+    localStorage.setItem('resultatMeat', emitMeat);
+    localStorage.setItem('resultatCarbs', emitCarb);
+    localStorage.setItem('resultatEatOut', emitEatOut);
+    localStorage.setItem('resultatFood',emitFood);
+    localStorage.setItem('resultatEgy', emitEgy);
+    localStorage.setItem('resultatTrans', emitTrans);
+    localStorage.setItem('resultatRecyc', emitRecyc);
+    localStorage.setItem('resultatScoreFin',emitTot)
+
 
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
@@ -499,17 +512,6 @@ submitResBtn.addEventListener('click', function(){
 
 
 // GENERAL REQUEST
-function queryAPI(link){
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', link)
-    xhr.onreadystatechange = function(){
-        if (xhr.status === 200 && xhr.readyState === 4){
-            let response = JSON.parse(xhr.responseText)
-            console.log(response)
-        }
-    }
-    xhr.send();
-}
 
 
 function calculMeatCO2(freq){
@@ -518,14 +520,11 @@ function calculMeatCO2(freq){
     let meatQty = meatFormWrap.querySelector('.meat-qty').value
 
     if(meatType === 'Beef'){
-        let emit = queryAPI('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Bovin viande"&refine=unite_francais%3A"kgCO2e%2Fkg de poids vif"&refine=localisation_geographique%3A"France continentale"')
-        result = emit * freq * 0.150 * meatQty
+        result = 12.8 * freq * 0.150 * meatQty;
     }else if(meatType === 'Pork'){
-        let emit = queryAPI('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Porc"&refine=unite_francais%3A"kgCO2e%2Fkg de poids vif"&refine=localisation_geographique%3A"France continentale"&refine=tags_francais%3A"Porc"')
-        result = emit * freq * 0.150 * meatQty
+        result = 2.42 * freq * 0.150 * meatQty;
     }else if(meatType === 'Chicken'){
-        let emit = queryAPI('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=tags_francais%3A"VOLAILLES_POULET"&refine=structure%3A"élément non décomposé"&refine=unite_francais%3A"kgCO2e%2Fkg de poids vif"&refine=localisation_geographique%3A"France continentale"')
-        result = emit * freq * 0.150 * meatQty
+       result = 2.92 * freq * 0.150 * meatQty;
     }
 
     return result
@@ -554,11 +553,9 @@ function calculEatOutCO2(freq){
     let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
 
     if(plates === 'Beef Rice'){
-        let emit = queryAPI('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=categorie%3A"Achats de services "&refine=nom_base_francais%3A"Repas"&refine=unite_francais%3A"kgCO2e%2Frepas"')
-        result = emit * freq * 0.250 * eatoutQty
+      result = 1.11 * freq * 0.250 * eatoutQty;
     }else if(plates === 'Chicken Rice'){
-        let emit = queryAPI('https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=categorie%3A"Achats de services "&refine=nom_base_francais%3A"Repas"&refine=unite_francais%3A"kgCO2e%2Frepas"')
-        result = emit * freq * 0.250 * eatoutQty
+       result = 1.11 * freq * 0.250 * eatoutQty;
     }
 
     return result
@@ -571,55 +568,46 @@ function calculEnergyCO2(){
     let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected').textContent
     let egyCons = egyWrapper.querySelector('.egy-qty').value
 
-    let emit;
     if(egySrc === 'Grid'){
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Electricité"&refine=localisation_geographique%3A"France continentale"&refine=unite_francais%3A"kgCO2e%2FkWh"`)
+        result = 1.06 * egyFreq * egyCons * 0.001;
     }else if(egySrc === 'Solar'){
-        emit = queryAPI (`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=tags_francais%3A"Moyen de production d'électricité.photovoltaïque"&refine=unite_francais%3A"kgCO2e%2FkWh"&refine=localisation_geographique%3A"France continentale"`)
+        result = 0.055 * egyFreq * egyCons * 0.001;
     }else if (egySrc === 'Gas (for heating)'){
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Gaz naturel"&refine=unite_francais%3A"kgCO2e%2Fm3 (n)"&refine=localisation_geographique%3A"France continentale"&refine=tags_francais%3A"Gaz naturel"`)
+        result = 2.35 * egyFreq * egyCons * 0.001;
     }else if (egySrc === 'LPG Gas (for Cooking)'){
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=tags_francais%3A"GPL"&refine=unite_francais%3A"kgCO2e%2Flitre"&refine=localisation_geographique%3A"France continentale"
-        `)
+        result = 1.77 * egyFreq * egyCons * 0.001;
     }
-    result = emit * egyFreq * egyCons * 0.001
-
     return result
 }
 
 function calculTransCO2(freq){
-    let result;
+    let result
     let transMode = transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')
     let transRecharge = transWrapper.querySelector('.transport-recharge').value
 
-    let emit;
     if(transMode.parentElement.className = 'electric-mode-opt'){
         // In kiloWatts
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Electricité"&refine=localisation_geographique%3A"France continentale"&refine=unite_francais%3A"kgCO2e%2FkWh"`)
-        result *= 0.001
+        result = 0.006 * freq * transRecharge;
     }else if(transMode.parentElement.className === 'diesel-mode-opt'){
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=tags_francais%3A"diesel"&refine=unite_francais%3A"kgCO2e%2Flitre"&refine=localisation_geographique%3A"France continentale"`)
+        result = 2.65 * freq * transRecharge;
     }
-    result = emit * freq * transRecharge
-
     return result
 }
 
 function calculRecycCO2(freq){
-    let result;
+    let result
     let recycType = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected').textContent
     let recycQty = transWrapper.querySelector('.qty-waste-input').value
 
-    let emit;
     if(recycType = 'By Sorting'){//collecte
         // In kiloWatts
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Plastique PET"&refine=unite_francais%3A"kgCO2e%2Ftonne"&refine=localisation_geographique%3A"France continentale"&refine=type_poste%3A"Collecte"`)
+        result = 18 * freq * recycQty;
     }else if(recycType = 'By Incineration'){//incinération
-        emit = queryAPI(`https:public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=nom_base_francais%3A"Plastique PET"&refine=unite_francais%3A"kgCO2e%2Ftonne"&refine=localisation_geographique%3A"France continentale"&refine=type_poste%3A"Incinération"`)
+        result = 1950 * freq * recycQty;
     }else if(recycType = 'Without Sorting'){//traitement
-        emit = queryAPI(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/base-carbone/records?limit=20&refine=categorie%3A"Traitement des déchets "&refine=nom_base_francais%3A"Plastique PET"&refine=tags_francais%3A"plastique fin de vie"&refine=localisation_geographique%3A"France continentale"`)
+        result = 1990 * freq * recycQty;
     }
-    result = emit * freq * recycQty
-
+   
     return result
 }
+
