@@ -501,7 +501,7 @@ submitResBtn.addEventListener('click', function(){
     localStorage.setItem('resultatEgy', emitEgy);
     localStorage.setItem('resultatTrans', emitTrans);
     localStorage.setItem('resultatRecyc', emitRecyc);
-    localStorage.setItem('resultatScoreFin',emitTot)
+    localStorage.setItem('resultatScoreFin',emitTot);
 
 
     setTimeout(function(){
