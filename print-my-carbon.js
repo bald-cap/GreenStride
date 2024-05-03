@@ -504,6 +504,7 @@ submitResBtn.addEventListener('click', function(){
     localStorage.setItem('resultatScoreFin',emitTot);
 
 
+    
     setTimeout(function(){
         submitResLab.style.transform = 'translate(-2%, -13%)';
     }, 270)
@@ -537,9 +538,9 @@ function calculCarbsCO2(freq){
 
     let emit;
     if(carbsType === 'Rice'){
-        emit = queryAPI(Ricelink)
+        emit 
     }else if(carbsType === 'Potato'){
-        emit = queryAPI(Potatolink)
+        emit  /*queryAPI(Potatolink)*/
     }
     result = emit * freq * carbsQty
 
