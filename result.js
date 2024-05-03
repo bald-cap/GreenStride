@@ -41,11 +41,3 @@ document.querySelector('.waste-score-wrapper p').textContent = resultatRecyc;
 
 
 
-// console.log('Résultat du calcul de l\'émission de viande:', resultatMeat);
-// console.log('Résultat du calcul de l\'émission de glucides:', resultatCarbs);
-// console.log('Résultat du calcul de l\'émission de manger à l\'extérieur:', resultatEatOut);
-// console.log('Résultat du calcul de l\'émission d\'énergie:', resultatEgy);
-// console.log('Résultat du calcul de l\'émission de transport:', resultatTrans);
-// console.log('Résultat du calcul de l\'émission de recyclage:', resultatRecyc);
-
-
