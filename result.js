@@ -13,31 +13,3 @@ document.querySelector('.food-score-wrapper p').textContent = resultatFood;
 document.querySelector('.transport-score-wrapper p').textContent = resultatTrans;
 document.querySelector('.energy-score-wrapper p').textContent = resultatEgy;
 document.querySelector('.waste-score-wrapper p').textContent = resultatRecyc;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

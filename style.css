@@ -1224,6 +1224,10 @@ article.ret-next-section.eat-out-ret-next-sect {
         margin-top: 7px;
     }
 
+    .food-cat-wrapper form {
+        width: 55%;
+    }
+
     .landing-main{
         margin-top: 25%;
     }
@@ -1254,42 +1258,16 @@ article.ret-next-section.eat-out-ret-next-sect {
         width: 85%;
     }
 
+    .profile-main .subscore-left-sect h4{
+        margin-right: 15px;
+    }
+
+    .profile-main .score-section h4{
+        text-align: center;
+        width: fit-content;
+    }
+
     .leaberboard-main{
         width: 80%;
     }
   }
-
-  
-
-
-/* 
-tablette site
-.landing-main{
-    font-size: 40px;
-}
-
-.landing-btns .login-article button{
-    transform: translate(-10%, -15%)
-}
-
-.landing-btns .signup-article button{
-    transform: translate(-5.7%, -15%)
-}
-
-.landing-btns .login-article div{
-    width: 140px;
-}
-
-.landing-btns .signup-article div{
-    width: 175px;
-}
-
-mobile site
-.landing-btns{
-    flex-wrap: wrap;
-} 
-
-.landing-btns .login-article{
-    margin-bottom: 15px
-}
-*/
