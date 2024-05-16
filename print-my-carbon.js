@@ -26,16 +26,41 @@ carbsNextBtn.addEventListener('mouseleave', function(){
     carbsNextLab.style.transition = '0.4s';
 })
 
+//FOOD CATEGORY
 carbsNextBtn.addEventListener('click', function(){
     carbsNextLab.style.transition = '0s';
     carbsNextLab.style.transform = 'translate(0%, 0%)'
-        let emitMeat = 0;
-            // MEAT
-            //Not working
-        let meatFreq = meatFreqWrap.querySelector('.pmc-main-p-selected').textContent;
-        let meatType = meatFormWrap.querySelector(".meat-type .pmc-main-p-selected").textContent
-        console.log(meatType)
-        let meatQty = meatFormWrap.querySelector('.meat-qty').value        
+    let emitMeat = 0;
+
+    let meatFreqEl = meatFreqWrap.querySelector('.pmc-main-p-selected')
+    let meatTypeEl = meatFormWrap.querySelector(".meat-type .pmc-main-p-selected")
+
+    let meatQtyEl = meatFormWrap.querySelector('.meat-qty')
+    let meatQty = meatQtyEl.value   
+
+    if (!meatFreqEl || !meatTypeEl){
+        alert('Select a MEAT TYPE or FREQUENCY.')
+
+        setTimeout(function(){
+            carbsNextLab.style.transform = 'translate(-3%, -13%)';
+        }, 270)
+    }else if (meatQty < 0){
+        alert('Quantity must be ABOVE 0.')
+
+        setTimeout(function(){
+            carbsNextLab.style.transform = 'translate(-3%, -13%)';
+        }, 270)
+    }else if (!meatQty){
+        alert('Select a MEAT QUANTITY!')
+
+        setTimeout(function(){
+            carbsNextLab.style.transform = 'translate(-3%, -13%)';
+        }, 270)
+    }else{
+        //EATING HOME
+
+        let meatFreq = meatFreqEl.textContent;
+
         if (meatFreq === 'Every day'){
             emitMeat = calculMeatCO2(360)
             console.log('Every day')
@@ -48,25 +73,21 @@ carbsNextBtn.addEventListener('click', function(){
         }else if (meatFreq === 'Every month'){
             emitMeat = calculMeatCO2(12)
             console.log('Every month')
-        }else if (meatFreq == null ||meatType == null ){
-            alert('Select a MEAT TYPE or FREQUENCY.')
-        }else if (meatQty < 0){
-            alert('Quantity must be ABOVE 0.')
         }
 
         localStorage.setItem('resultatMeat', emitMeat);
         console.log(emitMeat)
 
-    setTimeout(function(){
-        meatFormWrap.style.display = 'none';
-        carbsNextBtn.style.display = 'none';
-
-        carbsForm.style.display = 'flex';
-        eatinPrevNextSect.style.display = 'flex';
-
-        carbsNextLab.style.transform = 'translate(-3%, -13%)';
-    }, 270)
+        setTimeout(function(){
+            meatFormWrap.style.display = 'none';
+            carbsNextBtn.style.display = 'none';
     
+            carbsForm.style.display = 'flex';
+            eatinPrevNextSect.style.display = 'flex';
+    
+            carbsNextLab.style.transform = 'translate(-3%, -13%)';
+        }, 270)
+    }
 })
 
 const meatPrevLab = document.querySelector(".eat-in-meat-prev-btn")
@@ -140,31 +161,54 @@ eatoutNextBtn.addEventListener('click', function(){
 
     let emitCarb = 0;
     //CARBS
-    let carbsFreq = carbsForm.querySelector('.freq-opt .pmc-main-p-selected').textContent
-    if (carbsFreq === 'Every day'){
-        emitCarb = calculCarbsCO2(360)
-    }else if (carbsFreq === 'Every four days'){
-        emitCarb = calculCarbsCO2(91)
-    }else if (carbsFreq === 'Every week'){
-        emitCarb = calculCarbsCO2(52)
-    }else if (carbsFreq === 'Every month'){
-        emitCarb = calculCarbsCO2(12)
+    let carbsFreqEl = carbsForm.querySelector('.freq-opt .pmc-main-p-selected')
+    let carbsTypeEl = carbsForm.querySelector('.pmc-main-p-selected')
+    let carbsQty = carbsForm.querySelector('.qtyCarbs').value
+    if (!carbsFreqEl || !carbsTypeEl){
+        alert('Select a CARBOHYDRATE TYPE or FREQUENCY!')
+
+        setTimeout(function(){
+            eatoutNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else if (carbsQty < 0){
+        alert('Carbohydrate Quantity must be ABOVE 0!')
+
+        setTimeout(function(){
+            eatoutNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else if (!carbsQty){
+        alert('Select a Carbohydrate Quantity!')
+
+        setTimeout(function(){
+            eatoutNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else{
+        let carbsFreq = carbsFreqEl.textContent
+        if (carbsFreq === 'Every day'){
+            emitCarb = calculCarbsCO2(360)
+        }else if (carbsFreq === 'Every four days'){
+            emitCarb = calculCarbsCO2(91)
+        }else if (carbsFreq === 'Every week'){
+            emitCarb = calculCarbsCO2(52)
+        }else if (carbsFreq === 'Every month'){
+            emitCarb = calculCarbsCO2(12)
+        }
+
+        localStorage.setItem('resultatCarbs', emitCarb);
+
+        setTimeout(function(){
+            eatinLab.style.display = 'none';
+            eatinCarbs.style.display = 'none';
+            eatinPrevNextSect.style.display = 'none';
+
+            eatoutLab.style.display = 'flex';
+            eatoutWrapper.style.display = 'flex'
+
+            eatoutPrevNextSect.style.display = 'flex'
+
+            eatoutNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
     }
-
-    localStorage.setItem('resultatCarbs', emitCarb);
-
-    setTimeout(function(){
-        eatinLab.style.display = 'none';
-        eatinCarbs.style.display = 'none';
-        eatinPrevNextSect.style.display = 'none';
-
-        eatoutLab.style.display = 'flex';
-        eatoutWrapper.style.display = 'flex'
-
-        eatoutPrevNextSect.style.display = 'flex'
-
-        eatoutNextLab.style.transform = 'translate(-2%, -10%)';
-    }, 270)
 })
 
 
@@ -236,8 +280,32 @@ egyNextBtn.addEventListener('click', function(){
     egyNextLab.style.transition = '0s';
     egyNextLab.style.transform = 'translate(0%, 0%)';
 
-        //EATING OUT
-        let eatoutFreq = eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected').textContent
+    //EATING OUT
+    let emitEatOut = 0;
+    let eatoutFreqEl = eatoutWrapper.querySelector('.eat-out-freq-opt .pmc-main-p-selected')
+    let platesEl = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected')
+
+    let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
+    if (!eatoutFreqEl || !platesEl){
+        alert('Select MEAT TYPE or FREQUENCY!')
+
+        setTimeout(function(){
+            egyNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else if (eatoutQty < 0){
+        alert('QUANITY must be ABOVE 0!')
+
+        setTimeout(function(){
+            egyNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else if(!eatoutQty){
+        alert('Select a QUANTITY!')
+
+        setTimeout(function(){
+            egyNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }else{
+        let eatoutFreq = eatoutFreqEl.textContent
         if (eatoutFreq === 'Every day'){
             emitEatOut = calculEatOutCO2(360)
         }else if (eatoutFreq === 'Every four days'){
@@ -248,20 +316,22 @@ egyNextBtn.addEventListener('click', function(){
             emitEatOut = calculEatOutCO2(12)
         }
 
-        localStorage.setItem('resultatEatOut', emitEatOut);
 
         // emission alimentaire 
         let emitFood; 
+        let emitMeat = localStorage.getItem('resultatMeat')
+        let emitCarb = localStorage.getItem('resultatCarbs')
         emitFood = (emitMeat + emitCarb + emitEatOut)/3;
-        localStorage.setItem('resultatFood',emitFood);
+        localStorage.setItem('resultatFood', emitFood);
 
 
-    setTimeout(function(){
-        foodWrapper.style.display = 'none';
-        egyWrapper.style.display = 'flex';
+        setTimeout(function(){
+            foodWrapper.style.display = 'none';
+            egyWrapper.style.display = 'flex';
 
-        egyNextLab.style.transform = 'translate(-2%, -10%)';
-    }, 270)
+            egyNextLab.style.transform = 'translate(-2%, -10%)';
+        }, 270)
+    }
     
 })
 
@@ -326,18 +396,41 @@ transNextBtn.addEventListener('click', function(){
     transNextLab.style.transition = '0s';
     transNextLab.style.transform = 'translate(0%, 0%)';
 
-    //ENERGY CATEGORY
-    emitEgy = calculEnergyCO2()
-    localStorage.setItem('resultatEgy', emitEgy);
+    let egyFreqEl = egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected')
+    let egySrcEl = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected')
+    let egyCons = egyWrapper.querySelector('.egy-qty').value
 
+    if (!egyFreqEl || ! egySrcEl){
+        alert('Select a FREQUENCY or an ENERGY SORUCE!')
 
-    setTimeout(function(){
-        egyWrapper.style.display = 'none';
-        transWrapper.style.display = 'flex';
+        setTimeout(function(){
+            transNextLab.style.transform = 'translate(-1.5%, -13%)';
+        }, 270)
+    } else if (egyCons < 0){
+        alert('Energy Consumption must be above 0kWh')
 
-        transNextLab.style.transform = 'translate(-1.5%, -13%)';
-    }, 270)
+        setTimeout(function(){
+            transNextLab.style.transform = 'translate(-1.5%, -13%)';
+        }, 270)
+    }else if (!egyCons){
+        alert('Define an ENERGY CONSUMPTION!')
+
+        setTimeout(function(){
+            transNextLab.style.transform = 'translate(-1.5%, -13%)';
+        }, 270)
+    }else{
+        //ENERGY CATEGORY
+        emitEgy = calculEnergyCO2()
+        localStorage.setItem('resultatEgy', emitEgy);
+
+        setTimeout(function(){
+            egyWrapper.style.display = 'none';
+            transWrapper.style.display = 'flex';
+
+            transNextLab.style.transform = 'translate(-1.5%, -13%)';
+        }, 270)
     
+    }
 })
 
 const egyPrevBtn = document.querySelector(".energy-cat-prev-wrapper")
@@ -404,28 +497,50 @@ recycNextBtn.addEventListener('click', function(){
     recycNextLab.style.transform = 'translate(0%, 0%)';
 
     //TRANSPORT CATEGORY
-    let transFreq = transWrapper.querySelector('transport-cat-freq .pmc-main-p-selected').textContent
-    if (transFreq === 'Every day'){
-        emitTrans = calculTransCO2(360)
-    }else if (transFreq === 'Every four days'){
-        emitTrans = calculTransCO2(91)
-    }else if (transFreq === 'Every week'){
-        emitTrans = calculTransCO2(52)
-    }else if (transFreq === 'Every month'){
-        emitTrans = calculTransCO2(12)
-    }
+    let transFreqEl = transWrapper.querySelector('.transport-cat-freq .pmc-main-p-selected')
+    let transModeEl = transWrapper.querySelector('.modes-opt-wrapper .pmc-main-p-selected')
+    let transRecharge = transWrapper.querySelector('.transport-recharge').value
 
-    localStorage.setItem('resultatTrans', emitTrans);
+    if(!transFreqEl || !transModeEl){
+        alert('Select a TRANSPORT MODE or FREQUENCY!')
 
+        setTimeout(function(){
+            recycNextLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+    }else if(transRecharge < 0){
+        alert('RECHARGE must be ABOVE 0kWh / 0L!')
 
+        setTimeout(function(){
+            recycNextLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+    }else if(!transRecharge){
+        alert('Define a RECHARGE')
 
-    setTimeout(function(){
-        transWrapper.style.display = 'none';
-        recycWrapper.style.display = 'flex';
-
-        recycNextLab.style.transform = 'translate(-2%, -13%)';
-    }, 270)
+        setTimeout(function(){
+            recycNextLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+    }else{
+        let transFreq = transFreqEl.textContent
+        if (transFreq === 'Every day'){
+            emitTrans = calculTransCO2(360)
+        }else if (transFreq === 'Every four days'){
+            emitTrans = calculTransCO2(91)
+        }else if (transFreq === 'Every week'){
+            emitTrans = calculTransCO2(52)
+        }else if (transFreq === 'Every month'){
+            emitTrans = calculTransCO2(12)
+        }
     
+        localStorage.setItem('resultatTrans', emitTrans);
+    
+        setTimeout(function(){
+            transWrapper.style.display = 'none';
+            recycWrapper.style.display = 'flex';
+    
+            recycNextLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+        
+    }
 })
 
 const transPrevBtn = document.querySelector(".transport-cat-prev-wrapper")
@@ -504,36 +619,82 @@ submitResBtn.addEventListener('mouseleave', function(){
 })
 
 const meatFreqWrap = document.querySelector(".meat-freq-wrapper")
-submitResBtn.addEventListener('click', function(){
+submitResBtn.addEventListener('click', function(event){
     submitResLab.style.transform = 'translate(0%, 0%)';
     submitResLab.style.transition = '0s'
+
+    let profileTarget = submitResLab.querySelector('a')
   
-    //FOOD CATEGORY
-        //EATING HOME
-
     //RECYCLING CATEGORY
-    let recycFreq = recycWrapper.querySelector('.recycling-opt-wrapper .pmc-main-p-selected').textContent
-    if (recycFreq === 'Every week'){
-        emitRecyc = calculRecycCO2(52)
-    }else if(recycFreq === 'Every month'){
-        emitRecyc = calculRecycCO2(12)
+    let recycFreqEl =  recycWrapper.querySelector('.recycling-opt-wrapper .pmc-main-p-selected')
+    let recycTypeEl = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected')
+    let recycQtyEl = transWrapper.querySelector('.qty-waste-input')
+
+    if (!recycFreqEl || !recycTypeEl){
+        alert('Select a RECYCLING METHOD or a FREQUENCY!')
+
+        setTimeout(function(){
+            submitResLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+
+        event.preventDefault()
+        profileTarget.addEventListener('click', function(eventP){
+            eventP.preventDefault()
+        })
+        // window.href.
+    }else if(!recycQtyEl){
+        alert('Select a QUANTITY')
+
+        setTimeout(function(){
+            submitResLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
+
+        event.stopPropagation()
+        profileTarget.addEventListener('click', function(eventP){
+            eventP.preventDefault()
+        })
+    }else{
+        let recycQty = recycQtyEl.value
+
+        if(recycQty < 0){
+            alert('QUANTITY must be ABOVE 0!')
+    
+            setTimeout(function(){
+                submitResLab.style.transform = 'translate(-2%, -13%)';
+            }, 270)
+    
+            event.preventDefault()
+            profileTarget.addEventListener('click', function(eventP){
+                eventP.stopPropagation()
+            })
+        }else{
+            let emitRecyc = 0;
+            let recycFreq = recycFreqEl.textContent
+        
+            if (recycFreq === 'Every week'){
+                emitRecyc = calculRecycCO2(52)
+            }else if(recycFreq === 'Every month'){
+                emitRecyc = calculRecycCO2(12)
+            }
+            
+            localStorage.setItem('resultatRecyc', emitRecyc);
+    
+            //emission moyenne (score Total Emission):
+            let emitFood = localStorage.getItem('resultatFood')
+            let emitTrans = localStorage.getItem('resultatTrans')
+            let emitEgy = localStorage.getItem('resultatEgy')
+    
+            let emissionTot = (emitFood + emitRecyc + emitEgy + emitTrans) / 6;
+            
+            // Utilisation du résultat
+            // Stocker les résultats calculés dans localStorage
+            localStorage.setItem('resultatScoreFin', emissionTot);
+            
+            setTimeout(function(){
+                submitResLab.style.transform = 'translate(-2%, -13%)';
+            }, 270)
+        }
     }
-    
-
-    //emission moyenne (score Total Emission):
-    let emissionTot;
-    emissionTot= (emitMeat + emitCarb + emitEatOut+ emitRecyc + emitEgy + emitTrans)/6;
-    
-    // Utilisation du résultat
-    // Stocker les résultats calculés dans localStorage
-    localStorage.setItem('resultatRecyc', emitRecyc);
-    localStorage.setItem('resultatScoreFin',emitTot);
-
-
-    
-    setTimeout(function(){
-        submitResLab.style.transform = 'translate(-2%, -13%)';
-    }, 270)
 })
 
 
@@ -579,7 +740,7 @@ function calculCarbsCO2(freq){
 
 function calculEatOutCO2(freq){
     let result;
-    let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected')
+    let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected').textContent
     let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
 
     if(plates === 'Beef Rice'){
@@ -593,18 +754,18 @@ function calculEatOutCO2(freq){
 
 
 function calculEnergyCO2(){
-    let result;
-    let egyFreq = egyWrapper.querySelector('.energy-cat-freq .pmc-main-p-selected').textContent
-    let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected').textContent
+    let result = 0;
+    let egyFreq = 12
+    let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected').innerHTML
     let egyCons = egyWrapper.querySelector('.egy-qty').value
 
     if(egySrc === 'Grid'){
         result = 1.06 * egyFreq * egyCons * 0.001;
     }else if(egySrc === 'Solar'){
         result = 0.055 * egyFreq * egyCons * 0.001;
-    }else if (egySrc === 'Gas (for heating)'){
+    }else if (egySrc === 'Gas <span>(for heating)</span>'){
         result = 2.35 * egyFreq * egyCons * 0.001;
-    }else if (egySrc === 'LPG Gas (for Cooking)'){
+    }else if (egySrc === 'LPG Gas <span>(for Cooking)</span>'){
         result = 1.77 * egyFreq * egyCons * 0.001;
     }
     return result
@@ -629,12 +790,11 @@ function calculRecycCO2(freq){
     let recycType = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected').textContent
     let recycQty = transWrapper.querySelector('.qty-waste-input').value
 
-    if(recycType = 'By Sorting'){//collecte
-        // In kiloWatts
+    if(recycType === 'By Sorting'){
         result = 18 * freq * recycQty;
-    }else if(recycType = 'By Incineration'){//incinération
+    }else if(recycType === 'By Incineration'){
         result = 1950 * freq * recycQty;
-    }else if(recycType = 'Without Sorting'){//traitement
+    }else if(recycType === 'Without Sorting'){
         result = 1990 * freq * recycQty;
     }
    
