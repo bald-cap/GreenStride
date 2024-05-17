@@ -317,11 +317,13 @@ egyNextBtn.addEventListener('click', function(){
         }
 
 
-        // emission alimentaire 
-        let emitFood; 
+        
         let emitMeat = localStorage.getItem('resultatMeat')
+        console.log(emitMeat)
         let emitCarb = localStorage.getItem('resultatCarbs')
-        emitFood = (emitMeat + emitCarb + emitEatOut)/3;
+        console.log(emitCarb)
+        let emitFood = (Number(emitMeat) + Number(emitCarb) + emitEatOut) / 3;
+        console.log(emitFood)
         localStorage.setItem('resultatFood', emitFood);
 
 
@@ -619,16 +621,15 @@ submitResBtn.addEventListener('mouseleave', function(){
 })
 
 const meatFreqWrap = document.querySelector(".meat-freq-wrapper")
-submitResBtn.addEventListener('click', function(event){
+submitResBtn.addEventListener('click', function(){
     submitResLab.style.transform = 'translate(0%, 0%)';
     submitResLab.style.transition = '0s'
 
-    let profileTarget = submitResLab.querySelector('a')
-  
+
     //RECYCLING CATEGORY
     let recycFreqEl =  recycWrapper.querySelector('.recycling-opt-wrapper .pmc-main-p-selected')
     let recycTypeEl = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected')
-    let recycQtyEl = transWrapper.querySelector('.qty-waste-input')
+    let recycQty = recycWrapper.querySelector('.qty-waste-input').value
 
     if (!recycFreqEl || !recycTypeEl){
         alert('Select a RECYCLING METHOD or a FREQUENCY!')
@@ -636,64 +637,45 @@ submitResBtn.addEventListener('click', function(event){
         setTimeout(function(){
             submitResLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
-
-        event.preventDefault()
-        profileTarget.addEventListener('click', function(eventP){
-            eventP.preventDefault()
-        })
-        // window.href.
-    }else if(!recycQtyEl){
-        alert('Select a QUANTITY')
+    }else if(!recycQty){
+        alert('Select a QUANTITY!')
 
         setTimeout(function(){
             submitResLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
+    }else if(recycQty < 0){
+        alert('QUANTITY must be ABOVE 0!')
 
-        event.stopPropagation()
-        profileTarget.addEventListener('click', function(eventP){
-            eventP.preventDefault()
-        })
+        setTimeout(function(){
+            submitResLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
     }else{
-        let recycQty = recycQtyEl.value
-
-        if(recycQty < 0){
-            alert('QUANTITY must be ABOVE 0!')
+        let emitRecyc = 0;
+        let recycFreq = recycFreqEl.textContent
     
-            setTimeout(function(){
-                submitResLab.style.transform = 'translate(-2%, -13%)';
-            }, 270)
-    
-            event.preventDefault()
-            profileTarget.addEventListener('click', function(eventP){
-                eventP.stopPropagation()
-            })
-        }else{
-            let emitRecyc = 0;
-            let recycFreq = recycFreqEl.textContent
-        
-            if (recycFreq === 'Every week'){
-                emitRecyc = calculRecycCO2(52)
-            }else if(recycFreq === 'Every month'){
-                emitRecyc = calculRecycCO2(12)
-            }
-            
-            localStorage.setItem('resultatRecyc', emitRecyc);
-    
-            //emission moyenne (score Total Emission):
-            let emitFood = localStorage.getItem('resultatFood')
-            let emitTrans = localStorage.getItem('resultatTrans')
-            let emitEgy = localStorage.getItem('resultatEgy')
-    
-            let emissionTot = (emitFood + emitRecyc + emitEgy + emitTrans) / 6;
-            
-            // Utilisation du résultat
-            // Stocker les résultats calculés dans localStorage
-            localStorage.setItem('resultatScoreFin', emissionTot);
-            
-            setTimeout(function(){
-                submitResLab.style.transform = 'translate(-2%, -13%)';
-            }, 270)
+        if (recycFreq === 'Every week'){
+            emitRecyc = calculRecycCO2(52)
+        }else if(recycFreq === 'Every month'){
+            emitRecyc = calculRecycCO2(12)
         }
+        
+        localStorage.setItem('resultatRecyc', emitRecyc);
+
+        //emission moyenne (score Total Emission):
+        let emitFood = Number(localStorage.getItem('resultatFood'))
+        let emitTrans = Number(localStorage.getItem('resultatTrans'))
+        let emitEgy = Number(localStorage.getItem('resultatEgy'))
+
+        let emissionTot = (emitFood + emitRecyc + emitEgy + emitTrans) / 5;
+        
+        // Utilisation du résultat
+        // Stocker les résultats calculés dans localStorage
+        localStorage.setItem('resultatScoreFin', emissionTot);
+        
+        setTimeout(function(){
+            window.location.href = 'profile.html'
+            submitResLab.style.transform = 'translate(-2%, -13%)';
+        }, 270)
     }
 })
 
@@ -710,7 +692,6 @@ function calculMeatCO2(freq){
 
     if(meatType === 'Beef'){
         result = 12.8 * freq * 0.150 * meatQty;
-        console.log('beef')
     }else if(meatType === 'Pork'){
         result = 2.42 * freq * 0.150 * meatQty;
     }else if(meatType === 'Chicken'){
@@ -726,15 +707,16 @@ function calculCarbsCO2(freq){
     let carbsType = carbsForm.querySelector('.pmc-main-p-selected').textContent
     let carbsQty = carbsForm.querySelector('.qtyCarbs').value
 
-    let emit;
+    //A RENSEIGNER
+    let emit = 0;
     if(carbsType === 'Rice'){
-        emit 
+        emit = 2.8
     }else if(carbsType === 'Potato'){
-        emit  /*queryAPI(Potatolink)*/
+        emit = 0.150
     }
     result = emit * freq * carbsQty
 
-
+    console.log(result)
     return result
 }
 
@@ -788,7 +770,7 @@ function calculTransCO2(freq){
 function calculRecycCO2(freq){
     let result
     let recycType = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected').textContent
-    let recycQty = transWrapper.querySelector('.qty-waste-input').value
+    let recycQty = recycWrapper.querySelector('.qty-waste-input').value
 
     if(recycType === 'By Sorting'){
         result = 18 * freq * recycQty;

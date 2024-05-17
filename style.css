@@ -273,11 +273,11 @@ nav article:hover{
     transform: translate(-3.5%, -10%);
     font-family: inherit;
 }
-
+/* 
 .login-btn button a{
     color: #000A16;
     text-decoration: none;
-}
+} */
 
 .login-btn div{
     background-color: #334A51;

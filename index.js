@@ -67,6 +67,14 @@ loginBtn.addEventListener('click', function(){
     loginLab.style.transition = '0s'
     loginLab.style.transform = 'translate(0%, 0%)'
 
+    let username = document.querySelector('.username-input').value
+    if (!username){
+        alert('Type your username in the form below.')
+    }else{
+        localStorage.setItem('username', username)
+        window.location.href = 'homepage.html'
+    }
+
     setTimeout(function(){
         loginLab.style.transform = 'translate(-3.5%, -10%)'
     }, 270)
