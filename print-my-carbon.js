@@ -74,8 +74,8 @@ carbsNextBtn.addEventListener('click', function(){
             emitMeat = calculMeatCO2(12)
             console.log('Every month')
         }
-
-        localStorage.setItem('resultatMeat', emitMeat);
+        let emitMeatF = emitMeat.toFixed(2)
+        localStorage.setItem('resultatMeat', emitMeatF);
         console.log(emitMeat)
 
         setTimeout(function(){
@@ -194,7 +194,8 @@ eatoutNextBtn.addEventListener('click', function(){
             emitCarb = calculCarbsCO2(12)
         }
 
-        localStorage.setItem('resultatCarbs', emitCarb);
+        let emitCarbF = emitCarb.toFixed(2)
+        localStorage.setItem('resultatCarbs', emitCarbF);
 
         setTimeout(function(){
             eatinLab.style.display = 'none';
@@ -323,8 +324,8 @@ egyNextBtn.addEventListener('click', function(){
         let emitCarb = localStorage.getItem('resultatCarbs')
         console.log(emitCarb)
         let emitFood = (Number(emitMeat) + Number(emitCarb) + emitEatOut) / 3;
-        console.log(emitFood)
-        localStorage.setItem('resultatFood', emitFood);
+        let emitFoodF = emitFood.toFixed(2)
+        localStorage.setItem('resultatFood', emitFoodF);
 
 
         setTimeout(function(){
@@ -422,8 +423,9 @@ transNextBtn.addEventListener('click', function(){
         }, 270)
     }else{
         //ENERGY CATEGORY
-        emitEgy = calculEnergyCO2()
-        localStorage.setItem('resultatEgy', emitEgy);
+        let emitEgy = calculEnergyCO2()
+        let emitEgyF = emitEgy.toFixed(2)
+        localStorage.setItem('resultatEgy', emitEgyF);
 
         setTimeout(function(){
             egyWrapper.style.display = 'none';
@@ -522,6 +524,7 @@ recycNextBtn.addEventListener('click', function(){
             recycNextLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
     }else{
+        let emitTrans = 0;
         let transFreq = transFreqEl.textContent
         if (transFreq === 'Every day'){
             emitTrans = calculTransCO2(360)
@@ -533,7 +536,8 @@ recycNextBtn.addEventListener('click', function(){
             emitTrans = calculTransCO2(12)
         }
     
-        localStorage.setItem('resultatTrans', emitTrans);
+        let emitTransF = emitTrans.toFixed(2)
+        localStorage.setItem('resultatTrans', emitTransF);
     
         setTimeout(function(){
             transWrapper.style.display = 'none';
@@ -659,7 +663,8 @@ submitResBtn.addEventListener('click', function(){
             emitRecyc = calculRecycCO2(12)
         }
         
-        localStorage.setItem('resultatRecyc', emitRecyc);
+        let emitRecycF = emitRecyc.toFixed(2)
+        localStorage.setItem('resultatRecyc', emitRecycF);
 
         //emission moyenne (score Total Emission):
         let emitFood = Number(localStorage.getItem('resultatFood'))
