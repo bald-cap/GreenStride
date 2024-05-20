@@ -39,19 +39,19 @@ carbsNextBtn.addEventListener('click', function(){
     let meatQty = meatQtyEl.value   
 
     if (!meatFreqEl || !meatTypeEl){
-        alert('Select a MEAT TYPE or FREQUENCY.')
+        alert('Sélectionnez un TYPE DE VIANDE ou une FRÉQUENCE.')
 
         setTimeout(function(){
             carbsNextLab.style.transform = 'translate(-3%, -13%)';
         }, 270)
     }else if (meatQty < 0){
-        alert('Quantity must be ABOVE 0.')
+        alert('La quantité doit être SUPÉRIEURE à 0.')
 
         setTimeout(function(){
             carbsNextLab.style.transform = 'translate(-3%, -13%)';
         }, 270)
     }else if (!meatQty){
-        alert('Select a MEAT QUANTITY!')
+        alert('Sélectionnez une QUANTITÉ DE VIANDE!')
 
         setTimeout(function(){
             carbsNextLab.style.transform = 'translate(-3%, -13%)';
@@ -61,18 +61,18 @@ carbsNextBtn.addEventListener('click', function(){
 
         let meatFreq = meatFreqEl.textContent;
 
-        if (meatFreq === 'Every day'){
+        if (meatFreq === 'Chaque jour'){
             emitMeat = calculMeatCO2(360)
-            console.log('Every day')
-        }else if (meatFreq === 'Every four days'){
+            console.log('Chaque jour')
+        }else if (meatFreq === 'Tous les quatre jours'){
             emitMeat = calculMeatCO2(91)
-            console.log('Every four days')
-        }else if (meatFreq === 'Every week'){
+            console.log('Tous les quatre jours')
+        }else if (meatFreq === 'Chaque semaine'){
             emitMeat = calculMeatCO2(52)
-            console.log('Every week')
-        }else if (meatFreq === 'Every month'){
+            console.log('Chaque semaine')
+        }else if (meatFreq === 'Chaque mois'){
             emitMeat = calculMeatCO2(12)
-            console.log('Every month')
+            console.log('Chaque mois')
         }
         let emitMeatF = emitMeat.toFixed(2)
         localStorage.setItem('resultatMeat', emitMeatF);
@@ -165,32 +165,32 @@ eatoutNextBtn.addEventListener('click', function(){
     let carbsTypeEl = carbsForm.querySelector('.pmc-main-p-selected')
     let carbsQty = carbsForm.querySelector('.qtyCarbs').value
     if (!carbsFreqEl || !carbsTypeEl){
-        alert('Select a CARBOHYDRATE TYPE or FREQUENCY!')
+        alert('Sélectionnez un TYPE DE GLUCIDE ou une FRÉQUENCE!')
 
         setTimeout(function(){
             eatoutNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else if (carbsQty < 0){
-        alert('Carbohydrate Quantity must be ABOVE 0!')
+        alert('La quantité de glucides doit être SUPÉRIEURE à 0!')
 
         setTimeout(function(){
             eatoutNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else if (!carbsQty){
-        alert('Select a Carbohydrate Quantity!')
+        alert('Sélectionnez une QUANTITÉ DE GLUCIDE!')
 
         setTimeout(function(){
             eatoutNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else{
         let carbsFreq = carbsFreqEl.textContent
-        if (carbsFreq === 'Every day'){
+        if (carbsFreq === 'Chaque jour'){
             emitCarb = calculCarbsCO2(360)
-        }else if (carbsFreq === 'Every four days'){
+        }else if (carbsFreq === 'Tous les quatre jours'){
             emitCarb = calculCarbsCO2(91)
-        }else if (carbsFreq === 'Every week'){
+        }else if (carbsFreq === 'Chaque semaine'){
             emitCarb = calculCarbsCO2(52)
-        }else if (carbsFreq === 'Every month'){
+        }else if (carbsFreq === 'Chaque mois'){
             emitCarb = calculCarbsCO2(12)
         }
 
@@ -288,32 +288,32 @@ egyNextBtn.addEventListener('click', function(){
 
     let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
     if (!eatoutFreqEl || !platesEl){
-        alert('Select MEAT TYPE or FREQUENCY!')
+        alert('Sélectionnez un TYPE DE VIANDE ou une FRÉQUENCE!!')
 
         setTimeout(function(){
             egyNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else if (eatoutQty < 0){
-        alert('QUANITY must be ABOVE 0!')
+        alert('La QUANTITÉ doit être SUPÉRIEURE à 0!')
 
         setTimeout(function(){
             egyNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else if(!eatoutQty){
-        alert('Select a QUANTITY!')
+        alert('Sélectionnez une QUANTITÉ!')
 
         setTimeout(function(){
             egyNextLab.style.transform = 'translate(-2%, -10%)';
         }, 270)
     }else{
         let eatoutFreq = eatoutFreqEl.textContent
-        if (eatoutFreq === 'Every day'){
+        if (eatoutFreq === 'Chaque jour'){
             emitEatOut = calculEatOutCO2(360)
-        }else if (eatoutFreq === 'Every four days'){
+        }else if (eatoutFreq === 'Tous les quatre jours'){
             emitEatOut = calculEatOutCO2(91)
-        }else if (eatoutFreq === 'Every week'){
+        }else if (eatoutFreq === 'Chaque semaine'){
             emitEatOut = calculEatOutCO2(52)
-        }else if (eatoutFreq === 'Every month'){
+        }else if (eatoutFreq === 'Chaque mois'){
             emitEatOut = calculEatOutCO2(12)
         }
 
@@ -404,19 +404,19 @@ transNextBtn.addEventListener('click', function(){
     let egyCons = egyWrapper.querySelector('.egy-qty').value
 
     if (!egyFreqEl || ! egySrcEl){
-        alert('Select a FREQUENCY or an ENERGY SORUCE!')
+        alert("Sélectionnez une FRÉQUENCE ou une SOURCE D'ÉNERGIE!")
 
         setTimeout(function(){
             transNextLab.style.transform = 'translate(-1.5%, -13%)';
         }, 270)
     } else if (egyCons < 0){
-        alert('Energy Consumption must be above 0kWh')
+        alert("La consommation d'énergie doit être supérieure à 0 kWh")
 
         setTimeout(function(){
             transNextLab.style.transform = 'translate(-1.5%, -13%)';
         }, 270)
     }else if (!egyCons){
-        alert('Define an ENERGY CONSUMPTION!')
+        alert("Définissez une CONSOMMATION D'ÉNERGIE!")
 
         setTimeout(function(){
             transNextLab.style.transform = 'translate(-1.5%, -13%)';
@@ -506,19 +506,19 @@ recycNextBtn.addEventListener('click', function(){
     let transRecharge = transWrapper.querySelector('.transport-recharge').value
 
     if(!transFreqEl || !transModeEl){
-        alert('Select a TRANSPORT MODE or FREQUENCY!')
+        alert('Sélectionnez un MODE DE TRANSPORT ou une FRÉQUENCE!')
 
         setTimeout(function(){
             recycNextLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
     }else if(transRecharge < 0){
-        alert('RECHARGE must be ABOVE 0kWh / 0L!')
+        alert("La RECHARGE doit être SUPÉRIEURE à 0 kWh / 0 L!")
 
         setTimeout(function(){
             recycNextLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
     }else if(!transRecharge){
-        alert('Define a RECHARGE')
+        alert('Définissez une RECHARGE')
 
         setTimeout(function(){
             recycNextLab.style.transform = 'translate(-2%, -13%)';
@@ -526,13 +526,13 @@ recycNextBtn.addEventListener('click', function(){
     }else{
         let emitTrans = 0;
         let transFreq = transFreqEl.textContent
-        if (transFreq === 'Every day'){
+        if (transFreq === 'Chaque jour'){
             emitTrans = calculTransCO2(360)
-        }else if (transFreq === 'Every four days'){
+        }else if (transFreq === 'Tous les quatre jours'){
             emitTrans = calculTransCO2(91)
-        }else if (transFreq === 'Every week'){
+        }else if (transFreq === 'Chaque semaine'){
             emitTrans = calculTransCO2(52)
-        }else if (transFreq === 'Every month'){
+        }else if (transFreq === 'Chaque mois'){
             emitTrans = calculTransCO2(12)
         }
     
@@ -587,7 +587,7 @@ const allOptsPtag = document.querySelectorAll(".pmc-main p")
 allOptsPtag.forEach(function(opt, pos, all){
     opt.addEventListener('click', function(){
         // console.log(opt.classList)
-        if (opt.className === '' || opt.className === 'public-trans-opt' || opt.className === 'metal-opt'){
+        if (opt.className === '' || opt.className === 'public-trans-opt'){
             opt.className = 'pmc-main-p-selected';
             all.forEach(function(optDe, posDe){
                 if (optDe.parentElement.classList === opt.parentElement.classList && optDe != opt){
@@ -596,12 +596,8 @@ allOptsPtag.forEach(function(opt, pos, all){
             })
             // console.log(pos)
         }else if(opt.className === 'pmc-main-p-selected'){
-            if (opt.textContent === "Metals"){
-                opt.className = 'metal-opt'
-            }else{
-                opt.className = ''
-                console.log(opt.classList)
-            }
+            opt.className = ''
+            console.log(opt.classList)
         }
     })
 })
@@ -636,19 +632,19 @@ submitResBtn.addEventListener('click', function(){
     let recycQty = recycWrapper.querySelector('.qty-waste-input').value
 
     if (!recycFreqEl || !recycTypeEl){
-        alert('Select a RECYCLING METHOD or a FREQUENCY!')
+        alert('Sélectionnez une MÉTHODE DE RECYCLAGE ou une FRÉQUENCE!')
 
         setTimeout(function(){
             submitResLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
     }else if(!recycQty){
-        alert('Select a QUANTITY!')
+        alert('Sélectionnez une QUANTITÉ!')
 
         setTimeout(function(){
             submitResLab.style.transform = 'translate(-2%, -13%)';
         }, 270)
     }else if(recycQty < 0){
-        alert('QUANTITY must be ABOVE 0!')
+        alert('La quantité doit être SUPÉRIEURE à 0!')
 
         setTimeout(function(){
             submitResLab.style.transform = 'translate(-2%, -13%)';
@@ -657,9 +653,9 @@ submitResBtn.addEventListener('click', function(){
         let emitRecyc = 0;
         let recycFreq = recycFreqEl.textContent
     
-        if (recycFreq === 'Every week'){
+        if (recycFreq === 'Chaque semaine'){
             emitRecyc = calculRecycCO2(52)
-        }else if(recycFreq === 'Every month'){
+        }else if(recycFreq === 'Chaque mois'){
             emitRecyc = calculRecycCO2(12)
         }
         
@@ -672,10 +668,11 @@ submitResBtn.addEventListener('click', function(){
         let emitEgy = Number(localStorage.getItem('resultatEgy'))
 
         let emissionTot = (emitFood + emitRecyc + emitEgy + emitTrans) / 5;
+        let emissionTotF = emissionTot.toFixed(2)
         
         // Utilisation du résultat
         // Stocker les résultats calculés dans localStorage
-        localStorage.setItem('resultatScoreFin', emissionTot);
+        localStorage.setItem('resultatScoreFin', emissionTotF);
         
         setTimeout(function(){
             window.location.href = 'profile.html'
@@ -695,11 +692,11 @@ function calculMeatCO2(freq){
     console.log(meatType)
     let meatQty = meatFormWrap.querySelector('.meat-qty').value
 
-    if(meatType === 'Beef'){
+    if(meatType === 'Boeuf'){
         result = 12.8 * freq * 0.150 * meatQty;
-    }else if(meatType === 'Pork'){
+    }else if(meatType === 'Porc'){
         result = 2.42 * freq * 0.150 * meatQty;
-    }else if(meatType === 'Chicken'){
+    }else if(meatType === 'Poulet'){
        result = 2.92 * freq * 0.150 * meatQty;
     }
 
@@ -714,9 +711,9 @@ function calculCarbsCO2(freq){
 
     //A RENSEIGNER
     let emit = 0;
-    if(carbsType === 'Rice'){
+    if(carbsType === 'Riz'){
         emit = 2.8
-    }else if(carbsType === 'Potato'){
+    }else if(carbsType === 'Pomme de Terre'){
         emit = 0.150
     }
     result = emit * freq * carbsQty
@@ -730,9 +727,9 @@ function calculEatOutCO2(freq){
     let plates = eatoutWrapper.querySelector('.eat-out-opt-wrapper .pmc-main-p-selected').textContent
     let eatoutQty = eatoutWrapper.querySelector('.noPlates').value
 
-    if(plates === 'Beef Rice'){
+    if(plates === 'Riz au Boeuf'){
       result = 1.11 * freq * 0.250 * eatoutQty;
-    }else if(plates === 'Chicken Rice'){
+    }else if(plates === 'Riz au Poulet'){
        result = 1.11 * freq * 0.250 * eatoutQty;
     }
 
@@ -746,13 +743,13 @@ function calculEnergyCO2(){
     let egySrc = egyWrapper.querySelector('.energy-src-wrapper .pmc-main-p-selected').innerHTML
     let egyCons = egyWrapper.querySelector('.egy-qty').value
 
-    if(egySrc === 'Grid'){
+    if(egySrc === 'Réseau Électrique'){
         result = 1.06 * egyFreq * egyCons * 0.001;
-    }else if(egySrc === 'Solar'){
+    }else if(egySrc === 'Solaire'){
         result = 0.055 * egyFreq * egyCons * 0.001;
-    }else if (egySrc === 'Gas <span>(for heating)</span>'){
+    }else if (egySrc === 'Gaz <span>(pour chauffage)</span>'){
         result = 2.35 * egyFreq * egyCons * 0.001;
-    }else if (egySrc === 'LPG Gas <span>(for Cooking)</span>'){
+    }else if (egySrc === 'Gaz GPL <span>(pour cuisson)</span>'){
         result = 1.77 * egyFreq * egyCons * 0.001;
     }
     return result
@@ -777,11 +774,11 @@ function calculRecycCO2(freq){
     let recycType = recycWrapper.querySelector('.plastics-mgnt .pmc-main-p-selected').textContent
     let recycQty = recycWrapper.querySelector('.qty-waste-input').value
 
-    if(recycType === 'By Sorting'){
+    if(recycType === 'Par Tri'){
         result = 18 * freq * recycQty;
-    }else if(recycType === 'By Incineration'){
+    }else if(recycType === 'Par Incinération'){
         result = 1950 * freq * recycQty;
-    }else if(recycType === 'Without Sorting'){
+    }else if(recycType === 'Sans Tri'){
         result = 1990 * freq * recycQty;
     }
    
