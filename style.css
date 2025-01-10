@@ -138,7 +138,7 @@ nav article:hover{
    border: 1.7px solid #3D4856;
 }
 
-/*-----------------------LANDING MAIN (LOGIN, SIGNUP)------------------ */
+/*-----------------------LANDING MAIN (LOGIN)------------------ */
 .landing-main{
     font-size: 50px;
     flex-direction: column;
@@ -191,7 +191,7 @@ nav article:hover{
     border-radius: 10px;
 }
 .landing-btns .login-article div{
-    width: 222.95px;
+    width: 384px;
 }
 
 
@@ -212,7 +212,7 @@ nav article:hover{
 
 .login-form-wrapper input{
     height: 30px;
-    width: 300px;
+    width: 370px;
     border-radius: 8px;
     margin-bottom: 50px;
     background-color: #F0FCFA;
@@ -254,7 +254,7 @@ nav article:hover{
 
 .label-wrapper div{
     height: 52px;
-    width: 283.27px;
+    width: 479px;
     position: relative;
     z-index: 0;
     background-color: #96AFB8;
@@ -273,16 +273,16 @@ nav article:hover{
     transform: translate(-3.5%, -10%);
     font-family: inherit;
 }
-
+/* 
 .login-btn button a{
     color: #000A16;
     text-decoration: none;
-}
+} */
 
 .login-btn div{
     background-color: #334A51;
     height: 54.67px;
-    width: 179.96px;
+    width: 309px;
     position: relative;
     z-index: 0;
     border-radius: 10px;
@@ -370,7 +370,7 @@ nav article:hover{
     position: relative;
     z-index: 0;
     border-radius: 5px;
-    width: 114.72px;
+    width: 172.45px;
     height: 22px;
 }
 
@@ -393,11 +393,6 @@ nav article:hover{
     justify-content: space-around;
     width: 100%;
 }
-
-/* to edit
-.food-cat-wrapper form .left-sect{
-
-} */
 
 .qty-label-wrapper{
     margin-top: 30px;
@@ -423,11 +418,20 @@ nav article:hover{
     border-radius: 7px;
 }
 
-.meat-label-wrapper div, .freq-label-wrapper div, .carbs-freq-label-wrapper div, .energy-freq-wrapper div, .transport-freq-label-wrapper div{
+.meat-label-wrapper div{
+    height:28px;
+    width: 188.95px; 
+}
+
+.freq-label-wrapper div{
     height:28px;
     width: 133.97px;
 }
 
+.carbs-freq-label-wrapper div, .energy-freq-wrapper div, .transport-freq-label-wrapper div{
+    width: 133.97px;
+    height:28px;
+}
 
 .qty-label-wrapper div{
     height: 28px;
@@ -463,18 +467,18 @@ nav article:hover{
 }
 
 .eat-in-meat-prev-wrapper div{
-    width: 73.99px;
+    width: 90.49px;
     height: 24px;
 }
 
 .eat-out-next-wrapper div{
     height: 24px;
-    width: 98.74px;
+    width: 164.71px;
 }
 
 .eat-out-meal-label div{
     height: 28px;
-    width: 67.99px;
+    width: 78.99px;
 }
 
 .eat-out-qty-label-wrapper div{
@@ -513,7 +517,7 @@ nav article:hover{
 
 .carbs-next-wrapper div{
     height: 24px;
-    width: 79.24px;
+    width: 103.98px;
     position: relative;
     z-index: 0;
     background-color: #000913;
@@ -527,7 +531,7 @@ nav article:hover{
 }
 
 .carbs-label-wrapper div{
-    width: 177.95px;
+    width: 122.97px;
     height: 28px;
 }
 
@@ -586,12 +590,12 @@ article.ret-next-section.eat-out-ret-next-sect {
 }
 
 .eat-in-prev-wrapper div{
-    width: 93.49px;
+    width: 192.45px;
     height: 24px;
 }
 
 .energy-next-wrapper div{
-    width: 167.71px;
+    width: 184.21px;
     height: 24px;
 }
 
@@ -654,13 +658,13 @@ article.ret-next-section.eat-out-ret-next-sect {
 }
 
 .energy-src-label-wrapper div{
-    width: 188.95px;
+    width: 221.94px;
     height: 28px;
 }
 
 .energy-qty-wrapper div{
     height: 28px;
-    width: 232.93px;
+    width: 276.92px;
 }
 
 .energy-form-wrapper .left-sect input{
@@ -696,14 +700,14 @@ article.ret-next-section.eat-out-ret-next-sect {
     position: relative;
     z-index: 0;
     height: 24px;
-    width: 145.22px;
+    width: 211.2px;
 }
 
 .transport-cat-next-wrapper div{
     position: relative;
     z-index: 0;
     height: 24px;
-    width: 227.69px;
+    width: 194.7px;
 }
 
 
@@ -740,7 +744,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 .transport-cat-facecard div{
     position: relative;
     z-index: 0;
-    width: 310.59px;
+    width: 267.71px;
     height: 242.35px;
     background-color: #74988C;
     border-radius: 30px;
@@ -783,7 +787,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 }
 .mode-label-wrapper div{
     height: 28px;
-    width: 276.92px;
+    width: 221.94px;
 }
 
 .distance-label-wrapper div{
@@ -820,14 +824,14 @@ article.ret-next-section.eat-out-ret-next-sect {
 }
 
 .transport-ret-next-section .waste-cat-next-wrapper div{
-    width: 244.18px;
+    width: 277.17px;
     height: 24px;
     /* position: relative; */
 }
 
 .energy-cat-prev-wrapper div{
     height: 24px;
-    width: 161.71px;
+    width: 178.21px;
 }
 
 
@@ -862,7 +866,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 .recycling-cat-facecard div{
     position: relative;
     z-index: 0;
-    width: 332.03px;
+    width: 374.92px;
     height: 247.69px;
     background-color: #1D1D35;
     border-radius: 30px;
@@ -888,7 +892,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .recycling-meth-label-wrapper div{
     height: 28px ;
-    width: 210.94px;
+    width: 254.93px;
 }
 
 .recycling-qty-label-wrapper div{
@@ -935,7 +939,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .recycling-ret-next-section div{
     height: 24px;
-    width: 230.69px;
+    width: 197.7px;
 }
 
 .done-btn-wrapper{
@@ -943,11 +947,13 @@ article.ret-next-section.eat-out-ret-next-sect {
     width: fit-content;
 }
 
+/*
 .done-btn-wrapper a{
     color: #000A16;
     text-decoration: none;
     width: 100%;
 }
+*/
 
 .done-btn-wrapper div{
     width: 73.49px;
@@ -1015,15 +1021,40 @@ article.ret-next-section.eat-out-ret-next-sect {
     justify-content: space-between;
 
 }
-
-.overall-score-wrapper p{
-    font-size: 20px;
+.overall-score-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
-.sub-scores-wrapper p{
+.overall-score-wrapper h4{
+    margin-bottom: 0;
+}
+
+.comparison-result{
+    font-size: 16px; 
+    padding: 10px;
+    margin-top: 0;
+}
+
+.overall-score-wrapper .overall-score{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.sub-scores-wrapper p {
+    margin-top: 0px;
     font-size: 15px;
 }
-
+.sub-scores-wrapper article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .score-section h3, .score-section h4{
     border: 2px solid #000A16;
     padding: 1px 10px;
@@ -1038,88 +1069,6 @@ article.ret-next-section.eat-out-ret-next-sect {
 .score-section h4{
     font-size: 15px;
 }
-
-
-/* -------------------LEADERBAORD.HTML PAGE------------------*/
-
-.leaberboard-main{
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: flex-start; */
-    flex-direction: column;
-    text-align: center;
-    background-color: #334A51;
-    margin: 50px 0;
-    border-radius: 10px;
-    width: 40%;
-    border: 3px solid #000A16;
-    overflow: scroll;
-    color: #E8FDFF;
-}
-
-.lb-img-wrapper{
-    margin: 10px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.lb-img-wrapper img{
-    height: 180px;
-    width: auto;
-    background-color: #2C6575;
-    border: 3px solid #000A16;
-    padding: 5px 20px;
-    border-radius: 7px;
-}
-
-.lb-img-wrapper p{
-    font-size: 17px;
-    /* color: #9CB5BD; */
-    margin-bottom: 10px;
-    border: 2px solid #000A16;
-    width: fit-content;
-    padding: 1px 15px;
-    border-radius: 7px;
-    background-color: #2E454C;
-}
-
-.leaberboard-main .lb-list-wrapper{
-    display: flex;
-    width: 100%;
-}
-
-.leaberboard-main .lb-list-wrapper article{
-    width: 100%;
-}
-
-
-.leaberboard-main article h3, .leaberboard-main article h2{
-    height: 24px;
-    margin: 18px 0;
-    display: flex;
-    justify-content: center;
-    align-items: last baseline;
-}
-
-
-.leaberboard-main .lb-numbering .grey-lb{
-    background-color: #627B83;
-    border-radius: 3px 0 0 3px;
-}
-
-.leaberboard-main .lb-usernames-list .grey-lb{
-    background-color: #627B83;
-}
-
-.leaberboard-main .lb-scores-list .grey-lb{
-    background-color: #627B83;
-    border-radius: 0 3px 3px 0;
-
-}
-
 
 /* -------------------------HOMEPAGE.HTML-------------------- */
 .hp-main{
@@ -1137,7 +1086,7 @@ article.ret-next-section.eat-out-ret-next-sect {
 
 .hp-main h1{
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .signup-login-article{
@@ -1199,11 +1148,6 @@ article.ret-next-section.eat-out-ret-next-sect {
         margin-top: 20px;
     }
 
-    /* -----------------lEADERBOARD------------- */
-    .leaberboard-main{
-        width: 55%;
-    }
-
     /*---------PROFILE PAGE--------------- */
     .profile-main{
         width: 60%;
@@ -1224,16 +1168,37 @@ article.ret-next-section.eat-out-ret-next-sect {
         margin-top: 7px;
     }
 
+    .food-cat-wrapper form {
+        width: 55%;
+        justify-content: flex-start;
+    }
+
+    .freq-label-wrapper{
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .eat-in-ret-next-sect {
+        width: 45%;
+      }
+
+      article.ret-next-section.eat-out-ret-next-sect {
+        width: 65%;
+      }
     .landing-main{
         margin-top: 25%;
     }
+
+    .recycling-ret-next-section {
+        width: 50%;
+      }
 
     .landing-btns .login-article button{
         font-size: 40px;
     }
 
     .landing-btns .login-article div{
-        width: 190px;
+        width: 322px;
         height: 54.6667px;
     }
 
@@ -1254,42 +1219,17 @@ article.ret-next-section.eat-out-ret-next-sect {
         width: 85%;
     }
 
+    .profile-main .subscore-left-sect h4{
+        margin-right: 15px;
+    }
+
+    .profile-main .score-section h4{
+        text-align: center;
+        width: fit-content;
+    }
+
     .leaberboard-main{
         width: 80%;
     }
+
   }
-
-  
-
-
-/* 
-tablette site
-.landing-main{
-    font-size: 40px;
-}
-
-.landing-btns .login-article button{
-    transform: translate(-10%, -15%)
-}
-
-.landing-btns .signup-article button{
-    transform: translate(-5.7%, -15%)
-}
-
-.landing-btns .login-article div{
-    width: 140px;
-}
-
-.landing-btns .signup-article div{
-    width: 175px;
-}
-
-mobile site
-.landing-btns{
-    flex-wrap: wrap;
-} 
-
-.landing-btns .login-article{
-    margin-bottom: 15px
-}
-*/
