@@ -532,16 +532,16 @@ function calculMeatCO2(freq){
 
 function calculCarbsCO2(freq){
     let result = 1;
-    let carbsType = carbsForm.querySelector('.pmc-main-p-selected').textContent
-    let carbsQty = carbsForm.querySelector('.qtyCarbs').value
+    let carbsType = carbsForm.querySelector('.pmc-main-p-selected').textContent;
+    let carbsQty = carbsForm.querySelector('.qtyCarbs').value;
 
-    let emit;
     if(carbsType === 'Rice'){
-        emit = queryAPI(Ricelink)
+        result = 2.8 * freq * carbsQty * 0.150;
     }else if(carbsType === 'Potato'){
-        emit = queryAPI(Potatolink)
+        result = * freq * carbsQty * 0.150;
+        
     }
-    result = emit * freq * carbsQty
+    
 
 
     return result
